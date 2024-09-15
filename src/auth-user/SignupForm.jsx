@@ -1,7 +1,7 @@
 import React, { useState, useContext} from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import UserContext from "./UserContext";
-import Alert from "../shared/Alert";
+import AlertCard from "../shared/Alert";
 
 /** Signup Form component
  * Props: signup
@@ -45,52 +45,68 @@ function SignupForm(){
 
   
     return(
-        <div>
-            <h1>Signup</h1>
-            <form onSubmit = {handleSubmit}>
-                <div>
-                    <label>First Name</label>
-                    <input
-                        name = "firstName"
-                        value = {formData.firstName}
-                        onChange = {handleChange}
-                    />
-                </div>
-                <div>
-                    <label>Last Name</label>
-                    <input
-                        name = "lastName"
-                        value = {formData.lastName}
-                        onChange = {handleChange}
-                    />
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input
-                        name = "email"
-                        value = {formData.email}
-                        onChange = {handleChange}
-                    />
-                </div>
-                <div>
-                    <label>Username</label>
-                    <input
-                        name = "username"
-                        value = {formData.username}
-                        onChange = {handleChange}
-                    />
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input
-                        name = "password"
-                        type = "password"
-                        value = {formData.password}
-                        onChange = {handleChange}
-                    />
-                </div>
-                <button>Signup</button>
-            </form>
+        <div className = "Home">
+            <div className = "container card px-5 auth-form"
+                style = {{width: '32rem'}}>
+                <h1 className = "text-center mb-4">Signup</h1>
+                <p>Join now to share & uncover unforgettable experiences.</p>
+                <form onSubmit = {handleSubmit} className = "row">
+                    <div className = "form-floating mb-3 p-0">
+                        <input id = "firstName"
+                            className = "form-control"
+                            name = "firstName"
+                            placeholder = "firstName"
+                            value = {formData.firstName}
+                            onChange = {handleChange}
+                        />
+                        <label htmlFor="firstName">First Name</label>
+                    </div>
+                    <div className = "form-floating mb-3 p-0">
+                        <input id = "lastName"
+                            className = "form-control"
+                            name = "lastName"
+                            placeholder = "lastName"
+                            value = {formData.lastName}
+                            onChange = {handleChange}
+                        />
+                        <label htmlFor = "lastName">Last Name</label>
+                    </div>
+                    <div className = "form-floating mb-3 p-0">
+                        <input
+                            className = "form-control"
+                            name = "email"
+                            placeholder = "email"
+                            value = {formData.email}
+                            onChange = {handleChange}
+                        />
+                        <label htmlFor = "email">Email</label>
+                    </div>
+                    <div className = "form-floating mb-3 p-0">
+                        <input
+                            className = "form-control"
+                            name = "username"
+                            placeholder = "username"
+                            value = {formData.username}
+                            onChange = {handleChange}
+                        />
+                        <label htmlFor = "username">Username</label>
+                    </div>
+                    <div className = "form-floating mb-3 p-0">
+                        <input
+                            className = "form-control"
+                            name = "password"
+                            type = "password"
+                            placeholder = "password"
+                            value = {formData.password}
+                            onChange = {handleChange}
+                        />
+                        <label htmlFor = "password">Password</label>
+                    </div>
+                    <button className = "btn rounded-pill btn-lg btn-primary">
+                        Signup
+                    </button>
+                </form>
+            </div>
         </div>
     )
 }

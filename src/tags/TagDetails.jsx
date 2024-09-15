@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import WanderlystApi from "../utils/api";
 import ItinCard from "../itineraries/ItinCard";
+import "./TagDetails.css"
 
 /** Tag Details Page Component
  * Displays tag details and associated itineraries
@@ -14,6 +15,7 @@ function TagDetails(){
     // error state for invalid param tag name
     const [error, setError] = useState(false);
 
+    // fetches tag details from API upon initial load
     useEffect(function getTagDetails() {
         async function getTag(){
             try{
@@ -33,17 +35,25 @@ function TagDetails(){
 
     return(
         <div>
-            <h1>{tag.name}</h1>
-            <p>{tag.description}</p>
-            {tag.itineraries.length > 0 ?
-            <div>
-                {tag.itineraries.map(i => (
-                    <ItinCard key = {i.id} itinerary={i}/>
-                ))}
+            <div className = {`TagName-bg TagName-bg-${tag.name}`}>
+                <h1 className = "text-center display-4">
+                    {tag.name}
+                </h1>
             </div>
-            :
-            <p>Sorry, no itineraries have been tagged yet.</p>
-            }
+            <div className="container">
+                <p className="m-4">{tag.description}</p>
+                {tag.itineraries.length > 0 ?
+                <div>
+                    {tag.itineraries.map(i => (
+                        <ItinCard key = {i.id} itinerary={i}/>
+                    ))}
+                </div>
+                :
+                <p className="text-center fst-italic">
+                    Sorry, no itineraries have been tagged yet.
+                </p>
+                }
+            </div>
         </div>
     )
 }

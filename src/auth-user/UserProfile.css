@@ -1,0 +1,36 @@
+.Profile-header{
+    display: flex;
+    align-items: center;
+}
+.Profile-img{
+    height: 20vw;
+    width: 20vw;
+}
+.Profile-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+}
+
+@media (max-width: 1000px){
+    .Profile-header{
+        flex-direction: column;
+    }
+    .Profile-img{
+        height: 200px;
+        width: 200px;
+    }
+    .Profile-info{
+        padding: 0 3rem;
+    }
+}
+
+.Profile-itins-menu{
+    display: flex;
+    justify-content: space-around;
+}
+
+.itin-menu{
+    font-size: 3rem;
+}

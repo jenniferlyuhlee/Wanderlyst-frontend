@@ -4,6 +4,8 @@ import ProtectedRoute from "./ProtectedRoute";
 import LoginForm from "../auth-user/LoginForm";
 import SignupForm from "../auth-user/SignupForm";
 import UserProfile from "../auth-user/UserProfile";
+import ItinSearch from "../itineraries/ItinSearch";
+import TagList from "../tags/TagList";
 import TagDetails from "../tags/TagDetails";
 import Home from "../home/Home";
 
@@ -18,7 +20,8 @@ function RouteList({login, signup}){
             <Route path="/login" element={<LoginForm login={login} />} />
             <Route path="/signup" element={<SignupForm />}/>
             <Route path="/users/:username" element={<UserProfile />}/>
-            <Route path="/itineraries" element={<Home />}/>
+            <Route path="/explore" element={<ItinSearch />}/>
+            <Route path="/tags" element={<TagList />}/>
             <Route path="/itineraries/:id" element={<Home />}/>
             <Route path="/tags/:name" element={<TagDetails />}/>
             <Route path ="*" element={<Navigate to="/" />} />

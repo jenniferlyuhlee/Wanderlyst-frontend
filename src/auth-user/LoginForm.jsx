@@ -40,28 +40,38 @@ function LoginForm({login}){
     }
     
     return(
-        <div>
-            <h1>Login</h1>
-            <form onSubmit = {handleSubmit}>
-                <div>
-                    <label>Username</label>
-                    <input
+        <div className = "Home">
+        <div className="container card px-5 auth-form" 
+            style={{width: '32rem'}}>
+            <h1 className = "text-center mb-4">Login</h1>
+            <p>Share & stay updated on unforgettable experiences.</p>
+            <form onSubmit = {handleSubmit} className = "row">
+                <div className = "form-floating mb-3 p-0">
+                    <input id = "username"
+                        className = "form-control"
                         name = "username"
+                        placeholder = "username"
                         value = {formData.username}
                         onChange = {handleChange}
                     />
+                    <label htmlFor = "username">Username</label>
                 </div>
-                <div>
-                    <label>Password</label>
-                    <input
+                <div className = "form-floating mb-3 p-0">
+                    <input id = "password"
+                        className = "form-control"
                         name = "password"
                         type = "password"
+                        placeholder=""
                         value = {formData.password}
                         onChange = {handleChange}
                     />
+                    <label htmlFor = "password">Password</label>
                 </div>
-                <button>Login</button>
+                <button className = "btn rounded-pill btn-lg btn-primary">
+                    Login
+                </button>
             </form>
+        </div>
         </div>
     )
 }

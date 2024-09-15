@@ -1,0 +1,70 @@
+.TagName-bg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5%;
+    color: white;
+}
+
+/* Dynamic classes for each tag banner*/
+
+/* Image sourced from:
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStEulQnBJQLxrIsRTaYdZ94eR2XjjF4Vs0Xg&s */
+.TagName-bg-Foodie{
+    background-image: url("/public/tag-banners/foodie.jpg");
+    background-position: 0% 60%;
+}
+/* Image sourced from:
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSujr7zcu9Ql5pQKfqq0EWrkiGrgrJCMAGPQ&s */
+.TagName-bg-Explorer{
+    background-image: url("/public/tag-banners/explorer.jpg");
+    background-position: 0% 55%;
+}
+/* Image sourced from:
+https://media.timeout.com/images/105266065/image.jpg */
+.TagName-bg-Shopaholic{
+    background-image: url("/public/tag-banners/shopaholic.jpg");
+    background-position: center;
+}
+/* Image sourced from: 
+https://www.travelandleisure.com/thmb/QK4CuWpFdm2dR3NDznbBQtsAoN0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/northern-lights-kirkjufell-mountain-snaefellsnes-iceland-ICELANDLIGHTS1218-824f48715748425f828f05aa2a28dfe0.jpg */
+.TagName-bg-Naturalist{
+    background-image: url("/public/tag-banners/naturalist.jpg");
+    background-position: 0% 40%;
+}
+/* Image sourced from:
+https://media.cntraveler.com/photos/5a84852c7211e1293261ceb8/16:9/w_2560,c_limit/Skydive-Dubai_2018_GettyImages-643320488.jpg */
+.TagName-bg-Daredevil{
+    background-image: url("/public/tag-banners/daredevil.jpeg");
+    background-position: 0% 45%;
+}
+/* Image sourced from:
+https://www.intrepidtravel.com/v3/assets/blt0de87ff52d9c34a8/blt8cf727b4373c6aaa/6322fd2c02b4e92fd30d0030/Intrepid_Travel-Japan-Miyajima_1!.jpg?branch=prd */
+.TagName-bg-Flâneur{
+    background-image: url("/public/tag-banners/flâneur.jpg");
+    background-position: 0% 80%;
+}
+/* Image sourced from:
+https://media.worldnomads.com/travel-safety/thailand/nightlife-pattaya-social.jpg */
+.TagName-bg-Reveller{
+    background-image: url("/public/tag-banners/reveller.jpg");
+    background-position: 0% 65%;
+}
+/* Image sourced from: 
+https://live.staticflickr.com/2102/2035748576_d3735ec49c_h.jpg */
+.TagName-bg-Aesthete{
+    background-image: url("/public/tag-banners/aesthete.jpg");
+    background-position: 0% 15%;
+}
+/* Image sourced from:
+https://i.natgeofe.com/n/fba4cbb4-6a7f-4a4d-9e32-9f691cef8856/higts_southafrica_8502902-Edit_HR_square.jpg */
+.TagName-bg-Relaxationist{
+    background-image: url("/public/tag-banners/relaxationist.jpg");
+    background-position: 0% 60%;
+}
+/* Image sourced from:
+https://shuttermuse.com/wp-content/uploads/2020/04/african-wildlife-safari-elephant-1400px.jpg */
+.TagName-bg-Photographer{
+    background-image: url("/public/tag-banners/photographer.jpg");
+    background-position: 0% 55%;
+}
+

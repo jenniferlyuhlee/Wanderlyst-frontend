@@ -1,0 +1,20 @@
+.TagList{
+    text-align: center;
+}
+
+.TagList-text{
+    padding: 2rem;
+    background-color: rgba(102, 209, 149);
+    color: white;
+}
+
+.TagList-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 1000px){
+    .TagList-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
