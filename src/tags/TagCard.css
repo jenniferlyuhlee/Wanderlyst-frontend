@@ -43,51 +43,51 @@
 /* Image sourced from:
 https://media.worldnomads.com/responsibletravel/foodgetty.jpg */
 .tag-bg-Foodie{
-    background-image: url("/public/tag-images/foodie.jpg");
+    background-image: url("../assets/tag-images/foodie.jpg");
 }
 /* Image sourced from: 
 https://www.magnificentworld.com/wp-content/uploads/2020/07/Petra-Travel-Guide.jpg */
 .tag-bg-Explorer{
-    background-image: url("/public/tag-images/explorer.jpg");
+    background-image: url("../assets/tag-images/explorer.jpg");
 }
 /* Image sourced from: 
 https://www.travelmoneyoz.com/sites/v1.travelmoneyoz.com/files/fcl-blog/Shopping%20in%20Europe.jpg */
 .tag-bg-Shopaholic{
-    background-image: url("/public/tag-images/shopaholic.jpg");
+    background-image: url("../assets/tag-images/shopaholic.jpg");
 }
 /* Image sourced from: 
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJAcwcAlB303gRJ-q2XiDclKsbAOHoA-lJ5Q&s */
 .tag-bg-Naturalist{
-    background-image: url("/public/tag-images/naturalist.png");
+    background-image: url("../assets/tag-images/naturalist.png");
 }
 /* Image sourced from:
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA1QntsFS7YAxUvy-pWxAPV5j6aejGrQ8WUA&s */
 .tag-bg-Daredevil{
-    background-image: url("/public/tag-images/daredevil.jpg");
+    background-image: url("../assets/tag-images/daredevil.jpg");
 }
 /* Image sourced from: 
 https://assets.cntraveller.in/photos/66683fdbf2c9eddc5e47e147/16:9/w_1280,c_limit/GettyImages-1388400714%20(1).jpg */
 .tag-bg-Flâneur{
-    background-image: url("/public/tag-images/flâneur.jpg");
+    background-image: url("../assets/tag-images/flâneur.jpg");
 }
 /* Image sourced from: 
 https://timenightclub.com/wp-content/uploads/2024/06/orange-county-nightlife-clubbing-near-me-costa-mesa-ca-1-1024x576.webp */
 .tag-bg-Reveller{
-    background-image: url("/public/tag-images/reveller.jpeg");
+    background-image: url("../assets/tag-images/reveller.jpeg");
 }
 /* Image sourced from: 
 https://static01.nyt.com/images/2019/11/29/smarter-living/00sl-museums/merlin_156969357_5c37f256-0b6d-400d-bfba-cabd3e6c4dfd-superJumbo.jpg */
 .tag-bg-Aesthete{
-    background-image: url("/public/tag-images/aesthete.jpg");
+    background-image: url("../assets/tag-images/aesthete.jpg");
 }
 /* Image sourced from: 
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0UJUoR-pIhad6jpHdpWBBC_s714RW7x7g8Q&s */
 .tag-bg-Relaxationist{
-    background-image: url("/public/tag-images/relaxationist.jpg");
+    background-image: url("../assets/tag-images/relaxationist.jpg");
 }
 /* Image sourced from:
 https://i.natgeofe.com/n/fba4cbb4-6a7f-4a4d-9e32-9f691cef8856/higts_southafrica_8502902-Edit_HR_square.jpg */
 .tag-bg-Photographer{
-    background-image: url("/public/tag-images/photographer.jpg");
+    background-image: url("../assets/tag-images/photographer.jpg");
 }
 

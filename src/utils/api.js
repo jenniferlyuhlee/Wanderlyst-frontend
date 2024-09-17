@@ -80,7 +80,7 @@ class WanderlystApi {
 
     /** Get all itineraries, filtered if provided */
     static async getAllItins(filters){
-        let res = await this.request("itineraries", {filters});
+        let res = await this.request("itineraries", filters);
         return res.itineraries;
     }
 

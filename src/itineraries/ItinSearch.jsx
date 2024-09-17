@@ -1,87 +1,113 @@
 import React, { useState } from "react";
 import WanderlystApi from "../utils/api";
+import cleanData from "../utils/cleanData";
+import ItinCard from "./ItinCard";
 
 function ItinSearch( {searchFor, placeholder} ){
     const initialState = {
         title: "",
         country: "",
         duration: "",
-        tag: ""
+        tags: []
     }
     const [itineraries, setItineraries] = useState(null);
     const [searchQuery, setSearchQuery] = useState(initialState);
 
-    // general callback to update targeted form data
-    function handleChange(e){
-        const { name, value } = e.target;
-        setSearchQuery(data => ({...data, [name]: value}))
+    // general callback to update targeted form data (text inputs)
+    function handleInputChange(e){
+        const { name, value } = e.target
+        setSearchQuery(data => ({...data, [name]: value}));
+    }
+    // general callback to update targeted form data (select input)
+    function handleSelectChange(e){
+        const { options } = e.target;
+        const tags = Array.from(options)
+                                    .filter(option => option.selected)
+                                    .map(option => option.value);
+        setSearchQuery(data => ({...data, tags}));
+
     }
 
-    // search form submission that filters & re-renders itineraries list
-    async function searchItineraries(filters){
-        setItineraries(await WanderlystApi.getAllItins(filters))
+    // handler for form submission, sends cleaned search query to API
+    // displays corresponding itineraries
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const cleanedQuery = cleanData(searchQuery);
+        setItineraries(await WanderlystApi.getAllItins(cleanedQuery))
     }
-
-    // if (!itineraries) return <h1>loading</h1>
-
-    // form submission handler calls filtering 
 
     return(
-        <div className = "card">
-        <form className = "row">
-            <div className = "col-12 form-floating p-0">
-                <input id = "title"
-                    name = "title"
-                    className = "form-control"
-                    placeholder = "title"
-                    value = { searchQuery.title }
-                    onChange = {handleChange} />
-                <label htmlFor = "title">Title</label>
-            </div>
-            <div className = "col-12 form-floating p-0">
-                <input id = "country"
-                    name = "country"
-                    className = "form-control"
-                    placeholder = "country"
-                    value = { searchQuery.country }
-                    onChange = {handleChange} />
-                <label htmlFor = "country">Country</label>
-            </div>
-            <div className="col-6 form-floating mb-2 p-0">
-                <select id="tag"
-                    className="form-select" 
-                    placeholder="tag" 
-                    value={ searchQuery.tag }
-                    onChange = {handleChange} >
-                    <option value="">Filter by tag</option>
-                    <option value="Foodie">Foodie</option>
-                    <option value="Explorer">Explorer</option>
-                    <option value="Shopaholic">Shopaholic</option>
-                    <option value="Naturalist">Naturalist</option>
-                    <option value="Daredevil">Daredevil</option>
-                    <option value="Flâneur">Flâneur</option>
-                    <option value="Reveller">Reveller</option>
-                    <option value="Aesthete">Aesthete</option>
-                    <option value="Relaxationist">Relaxationist</option>
-                    <option value="Photographer">Photographer</option>
-                </select>
-                <label htmlFor="tag">Tag</label>
-            </div>
-            <div className ="col-6 form-floating mb-2 p-0">
-                <input id = "duration"
-                        name = "duration"
+        <div className = "container px-5">
+            <h3 className = "text-center py-3">
+                Where will you go next?
+            </h3>
+            <form onSubmit = {handleSubmit} className = "row">
+                <div className = "col-12 form-floating p-0">
+                    <input id = "title"
+                        name = "title"
                         className = "form-control"
-                        type = "number"
-                        min = "1"
-                        placeholder = "duration"
-                        value = { searchQuery.duration }
-                        onChange = {handleChange} />
-                <label htmlFor = "duration">Minimum duration</label>
+                        placeholder = "title"
+                        value = { searchQuery.title }
+                        onChange = {handleInputChange} />
+                    <label htmlFor = "title">Title</label>
+                </div>
+                <div className = "col-6 form-floating p-0">
+                    <input id = "country"
+                        name = "country"
+                        className = "form-control"
+                        placeholder = "country"
+                        value = { searchQuery.country }
+                        onChange = {handleInputChange} />
+                    <label htmlFor = "country">Country</label>
+                </div>
+                <div className ="col-6 form-floating p-0">
+                    <input id = "duration"
+                            name = "duration"
+                            className = "form-control"
+                            type = "number"
+                            min = "1"
+                            placeholder = "duration"
+                            value = { searchQuery.duration }
+                            onChange = {handleInputChange} />
+                    <label htmlFor = "duration">Max duration (days)</label>
+                </div>
+                <div className="col-12 form-floating p-0">
+                    <select multiple 
+                        size = "3"
+                        id="tags"
+                        name = "tags"
+                        className="form-select" 
+                        value={ searchQuery.tags}
+                        onChange = {handleSelectChange} 
+                        style = {{height: '5rem'}}
+                    >
+                        <option value="Foodie">Foodie</option>
+                        <option value="Explorer">Explorer</option>
+                        <option value="Shopaholic">Shopaholic</option>
+                        <option value="Naturalist">Naturalist</option>
+                        <option value="Daredevil">Daredevil</option>
+                        <option value="Flâneur">Flâneur</option>
+                        <option value="Reveller">Reveller</option>
+                        <option value="Aesthete">Aesthete</option>
+                        <option value="Relaxationist">Relaxationist</option>
+                        <option value="Photographer">Photographer</option>
+                    </select>
+                    <label htmlFor="tag">Filter by tags</label>
+                </div>
+                <button className = "btn rounded-pill btn-lg btn-primary mt-3">
+                    Search
+                </button>
+            </form>
+        {itineraries ? 
+            <div className = "mt-3">
+                <i>Showing {`${itineraries.length}
+                ${itineraries.length === 1 ? "result" : "results"}:`}</i>
+                {itineraries.map(i => (
+                    <ItinCard key={i.id} itinerary = {i}/>
+                ))}
             </div>
-            <button className = "btn rounded-pill btn-lg btn-primary">
-                Search
-            </button>
-        </form>
+            :
+            null}
         </div>
     )
 }

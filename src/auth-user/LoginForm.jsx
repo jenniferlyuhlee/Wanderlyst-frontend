@@ -14,12 +14,18 @@ function LoginForm({login}){
         username: "",
         password: ""
     };
-    // hooks
-    const navigate = useNavigate;
+    // hooks called unconditionally
+    const { currUser } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    // conditional rendering - redirects logged in users to homepage
+       if(currUser){
+        return <Navigate to="/" />
+    }
 
     // states: formData, formErrors
     const [formData, setFormData] = useState(initialState);
-    const [formErrors, setFormErrors] = useState([]);
+    const [formErrors, setFormErrors] = useState(null);
 
     // general callback to update targeted form data
     function handleChange(e){
@@ -36,9 +42,10 @@ function LoginForm({login}){
         }
         else{
             setFormErrors(result.err)
+        
         }
     }
-    
+
     return(
         <div className = "Home">
         <div className="container card px-5 auth-form" 
@@ -67,6 +74,11 @@ function LoginForm({login}){
                     />
                     <label htmlFor = "password">Password</label>
                 </div>
+                {formErrors ?
+                    <Alert type = "danger" messages = {formErrors}/>
+                    :
+                    null
+                }
                 <button className = "btn rounded-pill btn-lg btn-primary">
                     Login
                 </button>

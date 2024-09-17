@@ -1,25 +1,54 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { jwtDecode } from 'jwt-decode'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
-// API import
+
 import WanderlystApi from './utils/api'
-// Hooks imports
 import useLocalStorageState from './hooks/useLocalStorageState'
-// Component imports
+import UserContext from './auth-user/UserContext'
 import RouteList from './navigation/RouteList';
 import NavBar from './navigation/NavBar';
+import './App.css'
 
 function App() {
-  // centralized states: token
-  const [count, setCount] = useState(0)
+  // centralized states: user infoLoaded, currUser, token, likes
+  const [infoLoaded, setInfoLoaded] = useState(false);
   const [currUser, setCurrUser] = useState(null);
   const [token, setToken] = useLocalStorageState('wanderlyst-token');
+
+  // load user info from API after login, re-runs when token changes (user logs-in)
+  useEffect(function getUserInfo(){
+    async function getCurrUser(){
+      if(token){
+        try{
+          let { username } = jwtDecode(token);
+          WanderlystApi.token = token;
+          let user = await WanderlystApi.getUser(username);
+          let currUser = {
+            username: user.username, 
+            firstName: user.firstName,
+            lastName: user.lastName,
+            location: user.location,
+            bio: user.bio,
+            profilePic: user.profilePic,
+            isAdmin: user.isAdmin
+          }
+          setCurrUser(currUser);
+        }
+        catch(err){
+          setCurrUser(null);
+        }
+      }
+      setInfoLoaded(true);
+    }
+    setInfoLoaded(false);
+    getCurrUser();
+  }, [token])
 
   // Handles signup, sets token and logins new user
   async function signup(data){
     try{
-      let token = WanderlystApi.signup(data);
+      let token = await WanderlystApi.signup(data);
       setToken(token);
       return {success: true}
     }
@@ -45,9 +74,11 @@ function App() {
     setToken(null);
   }
 
-
+  if (!infoLoaded) return <h1>..loading</h1>
+  
   return (
-    <>
+    <UserContext.Provider
+      value = {{currUser, setCurrUser, logout}}>
       <NavBar />
       <div className='Body-content'>
         <RouteList login={login} signup={signup}/>
@@ -72,7 +103,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-    </>
+   </UserContext.Provider>
   )
 }
 

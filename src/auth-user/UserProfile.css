@@ -1,16 +1,20 @@
+.Profile-title{
+    text-align: center;
+}
 .Profile-header{
     display: flex;
     align-items: center;
 }
 .Profile-img{
-    height: 20vw;
-    width: 20vw;
+    height: 18vw;
+    width: 18vw;
+    border-radius: 50%;
 }
 .Profile-info{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 3rem;
+    padding: 2rem 3rem;
 }
 
 @media (max-width: 1000px){
@@ -32,5 +36,30 @@
 }
 
 .itin-menu{
+    border-radius: 0;
+    padding: 0.5rem 0;
+    width: 100%;
+    background-color: white;
+    border: 0;
+    border-bottom: solid white 3px;
+    color: #888;
+    transition: color, 0.2s ease-out;
+}
+.itin-menu:hover{
+    color: #555555;
+}
+
+.active-tab{
+    pointer-events: none;
+    cursor: not-allowed;
+    color: rgba(102, 209, 149);
+    border-bottom: 3px solid;
+}
+
+.bi{
     font-size: 3rem;
+}
+
+.bi-geo-alt-fill{
+    font-size: 1rem;
 }

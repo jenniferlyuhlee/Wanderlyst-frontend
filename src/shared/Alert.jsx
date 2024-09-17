@@ -7,12 +7,10 @@ import React from "react";
 
 function Alert({type, messages=[]}){
     return(
-        <div className={`alert alert-${type}`}>
-            <ul>
-                {messages.map(err => (
-                    <li key={err}>{err}</li>
-                ))}
-            </ul>
+        <div className={`alert alert-${type}`} role="alert">
+            {messages.map((err, i) => (
+                <p className = "small m-0" key={i}>{err}</p>
+            ))}
         </div>
     )
 }

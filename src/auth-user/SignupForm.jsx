@@ -1,7 +1,7 @@
 import React, { useState, useContext} from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import UserContext from "./UserContext";
-import AlertCard from "../shared/Alert";
+import Alert from "../shared/Alert";
 
 /** Signup Form component
  * Props: signup
@@ -9,7 +9,7 @@ import AlertCard from "../shared/Alert";
  * - Redirects user to user homepage
  */
 
-function SignupForm(){
+function SignupForm({signup}){
     const initialState = {
         username: "",
         password: "",
@@ -17,12 +17,18 @@ function SignupForm(){
         firstName: "",
         lastName: ""
     }
-    // hooks
+    // hooks called unconditionally
+    const { currUser } = useContext(UserContext);
     const navigate = useNavigate();
+
+    // conditional rendering - redirects logged in users to homepage
+       if(currUser){
+        return <Navigate to="/" />
+    }
 
     // states: formData, formErrors
     const [formData, setFormData] = useState(initialState);
-    const [formErrors, setFormErrors] = useState([]);
+    const [formErrors, setFormErrors] = useState(null);
 
     // general callback to update targeted form data
     function handleChange(e){
@@ -33,17 +39,15 @@ function SignupForm(){
     // form submission handler
     async function handleSubmit(e){
         e.preventDefault();
-        alert(`signup successful: ${formData.username}`)
-        // let result = await signup(formData);
-        // if(result.sucess){
-        //     navigate("/")
-        // }
-        // else{
-        //     setFormErrors(result.err);
-        // }
+        let result = await signup(formData);
+        if(result.sucess){
+            navigate("/")
+        }
+        else{
+            setFormErrors(result.err);
+        }
     }
 
-  
     return(
         <div className = "Home">
             <div className = "container card px-5 auth-form"
@@ -102,6 +106,11 @@ function SignupForm(){
                         />
                         <label htmlFor = "password">Password</label>
                     </div>
+                    {formErrors ?
+                        <Alert type = "danger" messages = {formErrors}/>
+                        :
+                        null
+                    }             
                     <button className = "btn rounded-pill btn-lg btn-primary">
                         Signup
                     </button>

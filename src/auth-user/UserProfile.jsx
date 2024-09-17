@@ -1,6 +1,7 @@
-import React, { useState, useEffect} from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext} from "react";
+import { NavLink, useParams } from "react-router-dom";
 import WanderlystApi from "../utils/api";
+import UserContext from "./UserContext";
 import ItinCard from "../itineraries/ItinCard";
 import dateConvert from "../helpers/dateConvert";
 import "./UserProfile.css"
@@ -10,11 +11,15 @@ import "./UserProfile.css"
  */
 
 function UserProfile(){
+    const { currUser } = useContext(UserContext);
     const { username } = useParams();
+
     // state set to null to use loading spinner
     const [user, setUser] = useState(null);
     // error state for invalid param user username
     const [error, setError] = useState(false);
+    // toggle display of itineraries/likes
+    const [showItins, setShowItins] = useState(true);
 
     useEffect(function getUserDetails() {
         async function getUser(){
@@ -29,58 +34,85 @@ function UserProfile(){
         getUser();
     }, [username]);
 
+    // toggle itineraries / likes
+    function toggleDisplay(){
+        setShowItins(state => !state)
+    }
+
     if(error) return <p>Sorry, this user could not be found.</p>
 
     if(!user) return <h1>Loading...</h1>
 
     return(
-        <div className = "container">
+        <div className = "container pt-3">
+            <h1 className = "Profile-title">@{user.username}</h1>
             <div className = "Profile-header">
                 <img className = "Profile-img" src = 
                 {user.profilePic ? `${user.profilePic}`
-                    : "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg?20200418092106"
+                    : "/src/assets/default_profile.jpg"
                 }
                 />
                 <div className = "Profile-info">
-                    <h1>@{user.username}</h1>
                     <h4>{user.firstName} {user.lastName}</h4>
-                    {user.location ? <p>{user.location}</p> : ""}
-                    {user.bio ? <p>{user.bio}</p> : ""}
+                    {user.location ? 
+                        <p>
+                            <i class="bi bi-geo-alt-fill"></i> {user.location}
+                        </p> 
+                    : null}
+                    {user.bio ? <p>{user.bio}</p> : null}
                     <small>Joined {dateConvert(user.createdAt)}</small>
-                    <Link to={``}
-                        className = "btn btn-sm rounded-pill btn-primary">
+                    {currUser.username === user.username ? 
+                    <NavLink to={`/users/profile/edit`}
+                        className = "mt-3 btn btn-sm rounded-pill btn-secondary">
                         Edit Profile
-                    </Link>
+                    </NavLink>
+                    : null}
                 </div>
             </div>
-            <hr/>
+            <hr className = "mb-0"/>
             <div>
                 <div className = "Profile-itins-menu">
-                    <i className="itin-menu bi bi-journal-richtext"></i>
-                    <i className="itin-menu bi bi-bookmark-heart"></i>
+                    <button onClick={toggleDisplay}
+                    className = {`itin-menu ${showItins? "active-tab" : ""}`}>
+                        <i className = {`bi bi-map${showItins? "-fill" : ""}`}></i>
+                    </button>
+                    <button onClick={toggleDisplay}
+                    className = {`itin-menu ${showItins? "" : "active-tab"}`}>
+                        <i className = {`bi bi-bookmark-heart${showItins? "" : "-fill"}`}></i>
+                    </button>
                 </div>
-                <h2>Itineraries</h2>
-                {user.itineraries.length > 0 ?
-                    <div>
-                        {user.itineraries.map(i => (
+                {showItins ?
+                <div className = "User-itins m-4">
+                    <div className = "mt-2">
+                    {user.itineraries.length > 0 ?
+                         user.itineraries.map(i => (
                             <ItinCard key = {i.id} itinerary={i}/>
-                        ))}
+                        ))
+                    :
+                        <div className = "text-center">
+                            <i>
+                                {currUser.username === user.username? "Start sharing itineraries!" : `${user.username} has no itineraries yet.`}
+                            </i>
+                        </div>
+                    }
                     </div>
+                </div>
                 :
-                <p>Start sharing itineraries!</p>
-                }
-            </div>
-            <div>
-                <h2>Likes</h2>
-                <i className="bi bi-bookmark-heart-fill"></i>
-                {user.likes.length > 0 ?
-                    <div>
-                        {user.likes.map(i => (
+                <div className = "userLikes m-4">                
+                    <div className = "mt-2">
+                    {user.likes.length > 0 ?
+                        user.likes.map(i => (
                             <ItinCard key = {i.id} itinerary={i}/>
-                        ))}
+                        ))
+                    :
+                    <div className = "text-center">
+                        <i>
+                            {currUser.username === user.username? " Start exploring and liking itineraries!" : `${user.username} has no likes yet.`}
+                        </i>
                     </div>
-                :
-                <p>Start exploring and liking itineraries!</p>
+                    }
+                    </div> 
+                </div>
                 }
             </div>
         </div>
