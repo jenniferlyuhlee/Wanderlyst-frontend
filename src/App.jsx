@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 
 import WanderlystApi from './utils/api'
 import useLocalStorageState from './hooks/useLocalStorageState'
@@ -15,6 +13,8 @@ function App() {
   const [infoLoaded, setInfoLoaded] = useState(false);
   const [currUser, setCurrUser] = useState(null);
   const [token, setToken] = useLocalStorageState('wanderlyst-token');
+  // Fetching tags at app level for multiple uses
+  const [tags, setTags] = useState(null);
 
   // load user info from API after login, re-runs when token changes (user logs-in)
   useEffect(function getUserInfo(){
@@ -44,6 +44,14 @@ function App() {
     setInfoLoaded(false);
     getCurrUser();
   }, [token])
+
+  // fetches tags from API upon initial load
+  useEffect(function getTags() {
+      async function getAllTags(){
+          setTags(await WanderlystApi.getAllTags());
+      }
+      getAllTags();
+  }, []);
 
   // Handles signup, sets token and logins new user
   async function signup(data){
@@ -78,10 +86,10 @@ function App() {
   
   return (
     <UserContext.Provider
-      value = {{currUser, setCurrUser, logout}}>
+      value = {{currUser, setCurrUser, logout, tags}}>
       <NavBar />
       <div className='Body-content'>
-        <RouteList login={login} signup={signup}/>
+        <RouteList login={login} signup={signup} />
       </div>
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">

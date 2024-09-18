@@ -103,8 +103,6 @@ class WanderlystApi {
     }
 
 }
-// for now attaching token on class
-WanderlystApi.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTcyNjE5NTY5NH0.L-yI5jHeZAW0XH_GvL9hWGaXzfzvJcHZTtiRSoDABLY";
 
 export default WanderlystApi;
 

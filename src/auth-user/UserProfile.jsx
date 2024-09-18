@@ -47,29 +47,34 @@ function UserProfile(){
         <div className = "container pt-3">
             <h1 className = "Profile-title">@{user.username}</h1>
             <div className = "Profile-header">
-                <img className = "Profile-img" src = 
-                {user.profilePic ? `${user.profilePic}`
-                    : "/src/assets/default_profile.jpg"
-                }
-                />
-                <div className = "Profile-info">
-                    <h4>{user.firstName} {user.lastName}</h4>
-                    {user.location ? 
-                        <p>
-                            <i class="bi bi-geo-alt-fill"></i> {user.location}
-                        </p> 
-                    : null}
-                    {user.bio ? <p>{user.bio}</p> : null}
-                    <small>Joined {dateConvert(user.createdAt)}</small>
-                    {currUser.username === user.username ? 
-                    <NavLink to={`/users/profile/edit`}
-                        className = "mt-3 btn btn-sm rounded-pill btn-secondary">
-                        Edit Profile
-                    </NavLink>
-                    : null}
+                <div className = "Profile-header-group">
+                    <img className = "Profile-img" src = 
+                    {user.profilePic ? `${user.profilePic}`
+                        : "/src/assets/default_profile.jpg"
+                    }
+                    />
+                    <div className = "Profile-info">
+                        <h4 className = "Profile-name">{user.firstName} {user.lastName}</h4>
+                        {user.location ? 
+                            <p>
+                                <i className="bi bi-geo-alt-fill"></i> {user.location}
+                            </p> 
+                        : null}
+                        {user.bio ? <p>{user.bio}</p> : null}
+                        <small><i>Joined {dateConvert(user.createdAt)}</i></small>
+                        {currUser.username === user.username ? 
+                        <NavLink to={`/users/profile/edit`}
+                            className = "mt-3 btn btn-sm rounded-pill btn-secondary">
+                            Edit Profile
+                        </NavLink>
+                        : null}
+                    </div>
                 </div>
+                <NavLink to="/itineraries/new" className="Profile-add-itin">
+                    <i className="bi bi-plus-circle-fill"></i>
+                </NavLink>
             </div>
-            <hr className = "mb-0"/>
+            <hr className = "Profile-separator"/>
             <div>
                 <div className = "Profile-itins-menu">
                     <button onClick={toggleDisplay}

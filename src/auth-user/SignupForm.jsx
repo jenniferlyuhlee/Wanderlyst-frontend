@@ -62,6 +62,7 @@ function SignupForm({signup}){
                             placeholder = "firstName"
                             value = {formData.firstName}
                             onChange = {handleChange}
+                            required
                         />
                         <label htmlFor="firstName">First Name</label>
                     </div>
@@ -72,6 +73,7 @@ function SignupForm({signup}){
                             placeholder = "lastName"
                             value = {formData.lastName}
                             onChange = {handleChange}
+                            required
                         />
                         <label htmlFor = "lastName">Last Name</label>
                     </div>
@@ -82,6 +84,7 @@ function SignupForm({signup}){
                             placeholder = "email"
                             value = {formData.email}
                             onChange = {handleChange}
+                            required
                         />
                         <label htmlFor = "email">Email</label>
                     </div>
@@ -92,6 +95,7 @@ function SignupForm({signup}){
                             placeholder = "username"
                             value = {formData.username}
                             onChange = {handleChange}
+                            required
                         />
                         <label htmlFor = "username">Username</label>
                     </div>
@@ -103,6 +107,7 @@ function SignupForm({signup}){
                             placeholder = "password"
                             value = {formData.password}
                             onChange = {handleChange}
+                            required
                         />
                         <label htmlFor = "password">Password</label>
                     </div>

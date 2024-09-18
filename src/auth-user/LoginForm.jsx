@@ -60,6 +60,7 @@ function LoginForm({login}){
                         placeholder = "username"
                         value = {formData.username}
                         onChange = {handleChange}
+                        required
                     />
                     <label htmlFor = "username">Username</label>
                 </div>
@@ -71,6 +72,7 @@ function LoginForm({login}){
                         placeholder=""
                         value = {formData.password}
                         onChange = {handleChange}
+                        required
                     />
                     <label htmlFor = "password">Password</label>
                 </div>

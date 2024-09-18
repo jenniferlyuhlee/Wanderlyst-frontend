@@ -1,23 +1,26 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext} from "react";
 import WanderlystApi from "../utils/api";
+import UserContext from "../auth-user/UserContext";
 import TagCard from "./TagCard";
 import "./TagList.css"
 
 function TagList(){
+    const { tags } = useContext(UserContext);
     // state set to null to use loading spinner
-    const [tags, setTags] = useState(null);
+    // const [tags, setTags] = useState(null);
 
-    // fetches tags from API upon initial load
-    useEffect(function getTags() {
-        async function getAllTags(){
-            setTags(await WanderlystApi.getAllTags());
-        }
-        getAllTags();
-    }, []);
+    // // fetches tags from API upon initial load
+    // useEffect(function getTags() {
+    //     async function getAllTags(){
+    //         setTags(await WanderlystApi.getAllTags());
+    //     }
+    //     getAllTags();
+    // }, []);
 
     if(!tags){
         return(<h1>Loading...</h1>)
     }
+    console.log(tags)
 
     return(
         <div className = "TagList">
@@ -27,7 +30,7 @@ function TagList(){
                 to a travel style and identity. Click on each tag to learn more.</p>
             </div>
             <div className = "TagList-grid">
-                {tags.map(t => <TagCard key={t} tag = {t}/>)}
+                {tags.map(t => <TagCard key={t.id} tag = {t}/>)}
             </div>
         </div>
 

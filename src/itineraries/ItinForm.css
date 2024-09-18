@@ -1,0 +1,17 @@
+.Form-tag-check{
+    margin: 0 0 1rem 0;
+    padding: 0;
+}
+
+.Form-tag-check .form-check {
+    width: 20%; /* 5 columns for screens larger than 1000px */
+    display: inline-block;
+}
+  
+  
+  @media (max-width: 900px) {
+    .Form-tag-check .form-check {
+      width: 50%; /* 2 columns for screens smaller than 1000px */
+      display: inline-block;
+    }
+  }

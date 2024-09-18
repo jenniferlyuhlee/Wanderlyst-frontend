@@ -6,7 +6,7 @@ import SignupForm from "../auth-user/SignupForm";
 import UserProfile from "../auth-user/UserProfile";
 import UserEditForm from "../auth-user/UserEditForm";
 import ItinSearch from "../itineraries/ItinSearch";
-import ItinCreate from "../itineraries/ItinCreate";
+import ItinForm from "../itineraries/ItinForm";
 import TagList from "../tags/TagList";
 import TagDetails from "../tags/TagDetails";
 import Home from "../home/Home";
@@ -26,7 +26,7 @@ function RouteList({login, signup}){
             <Route path="/users/profile/edit" element={<UserEditForm />}/>
             <Route path="/explore" element={<ItinSearch />}/>
             <Route path="/tags" element={<TagList />}/>
-            <Route path="/share" element={<ItinCreate />}/>
+            <Route path="/itineraries/new" element={<ItinForm />}/>
             <Route path="/itineraries/:id" element={<Home />}/>
             <Route path="/tags/:name" element={<TagDetails />}/>
             <Route path ="*" element={<Navigate to="/" />} />

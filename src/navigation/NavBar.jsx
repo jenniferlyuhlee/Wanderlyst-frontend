@@ -20,7 +20,7 @@ function NavBar(){
                     <NavLink className = "NavBar-link-right" to = "/tags">
                         Tags
                     </NavLink>
-                    <NavLink className = "NavBar-link-right" to = "/share">
+                    <NavLink className = "NavBar-link-right" to = "/itineraries/new">
                         Share
                     </NavLink>
                 </>

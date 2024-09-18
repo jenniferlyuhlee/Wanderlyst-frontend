@@ -4,10 +4,10 @@ import "./TagCard.css"
 
 function TagCard({tag}){
     return(
-        <Link to={`/tags/${tag}`} className = "TagCard ">
-            <div className = {`Tag-bg tag-bg-${tag}`}>
+        <Link to={`/tags/${tag.name}`} className = "TagCard ">
+            <div className = {`Tag-bg tag-bg-${tag.name}`}>
                 <div className = "TagCard-overlay">
-                    <h4>{tag}</h4>
+                    <h4>{tag.name}</h4>
                 </div>
             </div>
         </Link>

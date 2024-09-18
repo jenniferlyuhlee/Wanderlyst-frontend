@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import WanderlystApi from "../utils/api";
-import cleanData from "../utils/cleanData";
+import cleanData from "../helpers/cleanData";
 import ItinCard from "./ItinCard";
 
 function ItinSearch( {searchFor, placeholder} ){

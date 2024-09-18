@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import WanderlystApi from "../utils/api";
-import cleanData from "../utils/cleanData";
+import cleanData from "../helpers/cleanData";
 import UserContext from "./UserContext";
 import Alert from "../shared/Alert";
 

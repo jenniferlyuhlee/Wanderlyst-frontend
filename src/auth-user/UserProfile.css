@@ -2,6 +2,12 @@
     text-align: center;
 }
 .Profile-header{
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Profile-header-group{
     display: flex;
     align-items: center;
 }
@@ -17,17 +23,36 @@
     padding: 2rem 3rem;
 }
 
-@media (max-width: 1000px){
+@media (max-width: 800px){
     .Profile-header{
+        flex-direction: column;
+        padding: 0;
+    }
+    .Profile-header-group{
         flex-direction: column;
     }
     .Profile-img{
-        height: 200px;
-        width: 200px;
+        height: 150px;
+        width: 150px;
     }
     .Profile-info{
-        padding: 0 3rem;
+        margin-top: 1rem;
+        padding: 0;
     }
+}
+
+.Profile-separator{
+    margin: 2rem 0 0 0;
+}
+
+@media (max-width: 1200px){
+    .Profile-separator{
+        margin: 0;
+    }
+}
+
+.Profile-add-itin{
+    color: rgba(102, 209, 149);
 }
 
 .Profile-itins-menu{

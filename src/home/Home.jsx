@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../auth-user/UserContext";
+import pickRandom from "../helpers/random";
 import "./Home.css"
 
 function Home(){
-    const { currUser } = useContext(UserContext);
+    const { currUser, tags } = useContext(UserContext);
+    
     return(
         <div className = "Home">
             <div className = "Home-title">
@@ -21,9 +23,12 @@ function Home(){
                         className = "rounded-pill btn btn-lg btn-primary me-2">
                         Search itineraries
                     </Link>
-                    <Link to = "/tags" 
+                    <p className = "fs-6 mt-4 mb-2">
+                        Don't know where to start? Click below to explore a random tag.
+                    </p>
+                    <Link to = {`/tags/${pickRandom(tags)}`}
                         className = "rounded-pill btn btn-lg btn-primary">
-                        Check out tags
+                        Explore a tag
                     </Link>
                 </>
                 :
