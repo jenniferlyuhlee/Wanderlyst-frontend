@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import WanderlystApi from "../utils/api";
 import ItinCard from "../itineraries/ItinCard";
+import Loading from "../shared/Loading";
 import "./TagDetails.css"
 
 /** Tag Details Page Component
@@ -22,19 +23,18 @@ function TagDetails(){
                 setTag(await WanderlystApi.getTag(name));
             }
             catch(err){
-                console.error("Tag not found");
                 setError(true);
             }
         }
         getTag();
     }, [name]);
 
-    if(error) return <p>Sorry this tag doesn't exist.</p>
+    if(error) return <p className="NotFound">Sorry this tag doesn't exist.</p>
 
-    if(!tag) return <h1>Loading...</h1>
+    if(!tag) return <Loading />
 
     return(
-        <div>
+        <div className = "TagDetails">
             <div className = {`TagName-bg TagName-bg-${tag.name}`}>
                 <h1 className = "text-center display-4">
                     {tag.name}

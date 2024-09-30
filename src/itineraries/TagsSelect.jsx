@@ -14,7 +14,7 @@ function TagsSelect( {selectedTags, handleTagChange} ){
                     value={tag.id} 
                     id={tag.name}
                     onChange = {handleTagChange}
-                    checked = {selectedTags.includes(tag.id)}
+                    checked = {selectedTags.includes(String(tag.id))}
                 />
                 <label className="form-check-label" htmlFor={tag.name}>
                     {tag.name}

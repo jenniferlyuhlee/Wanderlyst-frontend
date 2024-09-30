@@ -15,17 +15,13 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
     background-color: #ffffff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: black;
   text-decoration: inherit;
 }
 a:hover {
@@ -40,8 +36,20 @@ a:hover {
   min-height: 100vh;
 } */
 
+.NotFound{
+  margin: 6rem 0;
+  text-align: center;
+}
+
+p{
+  margin: 0;
+}
+
+hr{
+  margin: 0;
+}
+
 .card{
-  /* border: none; */
   padding: 2em;
 }
 .color-card{
@@ -73,9 +81,28 @@ a:hover {
   color: #555555;
 }
 
+.text-bg-primary{
+  background-color: rgba(102, 209, 149) !important;
+}
+.text-bg-primary:hover{
+  background-color: rgb(73, 150, 114) !important;
+}
+
+.auth-form{
+  margin: 0.5rem auto !important;
+  width: 32rem;
+}
+
 @media (max-width: 1000px){
   .auth-form{
-    margin: 2rem;
+    margin-top: 4rem !important;
+  }
+}
+
+@media (max-width: 500px){
+  .auth-form{
+    margin-top: 1rem !important;
+    width: 30rem;
   }
 }
 

@@ -15,6 +15,7 @@
     height: 18vw;
     width: 18vw;
     border-radius: 50%;
+    object-fit: cover;
 }
 .Profile-info{
     display: flex;
@@ -47,7 +48,7 @@
 
 @media (max-width: 1200px){
     .Profile-separator{
-        margin: 0;
+        margin: 1rem 0 0 0;
     }
 }
 
@@ -81,7 +82,9 @@
     border-bottom: 3px solid;
 }
 
-.bi{
+.bi-map, .bi-map-fill, 
+.bi-bookmark-heart, .bi-bookmark-heart-fill,
+.bi-plus-circle-fill{
     font-size: 3rem;
 }
 

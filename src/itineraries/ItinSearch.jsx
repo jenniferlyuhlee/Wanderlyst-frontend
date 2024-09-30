@@ -3,7 +3,7 @@ import WanderlystApi from "../utils/api";
 import cleanData from "../helpers/cleanData";
 import ItinCard from "./ItinCard";
 
-function ItinSearch( {searchFor, placeholder} ){
+function ItinSearch( ){
     const initialState = {
         title: "",
         country: "",
@@ -37,8 +37,8 @@ function ItinSearch( {searchFor, placeholder} ){
     }
 
     return(
-        <div className = "container px-5">
-            <h3 className = "text-center py-3">
+        <div className = "container px-5 mb-5 body-cont">
+            <h3 className = "text-center pb-3">
                 Where will you go next?
             </h3>
             <form onSubmit = {handleSubmit} className = "row">

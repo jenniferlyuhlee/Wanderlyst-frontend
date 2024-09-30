@@ -1,0 +1,64 @@
+.Itin-details{
+    padding: 1rem 4rem 4rem 4rem;
+    margin: 2rem 5rem;
+}
+
+@media (max-width: 900px){
+    .Itin-details{
+        padding: 1rem 3rem 3rem 3rem;
+        margin: 2rem;
+    }
+}
+
+.Itin-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Itin-likes{
+    display: flex;
+    align-items: center;
+}
+
+.likes-display{
+    cursor: auto;
+}
+
+.Itin-info-head h3, .Itin-info-head h5 {
+    margin: 0;
+}
+
+.Itin-tags{
+    margin: 0.5rem 0;
+}
+
+.Itin-map{
+    margin: 0 auto;
+    height: 70vh;
+    width: 80%;
+}
+
+
+@media (max-width: 1200px){
+    .Itin-map{
+        height: 60vh;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px){
+    .Itin-map{
+        height: 50vh;
+    }
+}
+
+.Place{
+    display: flex;
+    flex-direction: column;
+}
+.Place-img{
+    width: 70vw;
+    align-self: center;
+    margin: 1rem;
+}

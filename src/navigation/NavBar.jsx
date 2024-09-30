@@ -8,7 +8,7 @@ function NavBar(){
 
     return(
         <nav className = "NavBar">
-            <div className = "Navbar-left">
+            <div className = "NavBar-left">
                 <NavLink className = "NavBar-link-left" to = "/">
                     Wanderlyst
                 </NavLink>
@@ -28,16 +28,44 @@ function NavBar(){
                 ""
                 }
             </div>
-            <div className = "Navbar-right">
+            <div className = "NavBar-right">
                 {currUser? 
                 <>
-                    <NavLink className = "NavBar-link-right" to={`users/profile/${currUser.username}`} >
-                        Profile
+                    <div className="dropdown NavBar-link-right">
+                        <img className = "NavBar-profilePic dropdown-toggle"
+                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                            src = {currUser.profilePic ? `${currUser.profilePic}`
+                            : "/src/assets/default_profile.jpg"}
+                        />
+                        <ul className="dropdown-menu text-center p-2">
+                            <li>
+                                <NavLink className = "NavBar-link-right" 
+                                    to={`users/profile/${currUser.username}`}>
+                                    Profile
+                                </NavLink>
+                            </li>
+                            <hr className = "my-1"/>
+                            <li>
+                            <Link className="NavBar-link-right" 
+                                to="/" 
+                                onClick={logout}>Logout
+                            </Link>  
+                            </li>
+                        </ul>
+                    </div>
+             
+                 
+                    {/* <NavLink className = "NavBar-link-right" to={`users/profile/${currUser.username}`} >
+                        <img className = "NavBar-profilePic"
+                            src = {currUser.profilePic ? `${currUser.profilePic}`
+                            : "/src/assets/default_profile.jpg"}
+                        />
                     </NavLink>
                     <Link className="NavBar-link-right" 
                         to="/" 
                         onClick={logout}>Logout
-                    </Link>  
+                    </Link>   */}
+                    
                 </>
                 :
                 <>

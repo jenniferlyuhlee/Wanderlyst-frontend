@@ -7,6 +7,7 @@ import UserProfile from "../auth-user/UserProfile";
 import UserEditForm from "../auth-user/UserEditForm";
 import ItinSearch from "../itineraries/ItinSearch";
 import ItinForm from "../itineraries/ItinForm";
+import ItinDetails from "../itineraries/ItinDetails";
 import TagList from "../tags/TagList";
 import TagDetails from "../tags/TagDetails";
 import Home from "../home/Home";
@@ -22,13 +23,20 @@ function RouteList({login, signup}){
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginForm login={login} />} />
             <Route path="/signup" element={<SignupForm signup={signup} />}/>
-            <Route path="/users/profile/:username" element={<UserProfile />}/>
-            <Route path="/users/profile/edit" element={<UserEditForm />}/>
-            <Route path="/explore" element={<ItinSearch />}/>
-            <Route path="/tags" element={<TagList />}/>
-            <Route path="/itineraries/new" element={<ItinForm />}/>
-            <Route path="/itineraries/:id" element={<Home />}/>
-            <Route path="/tags/:name" element={<TagDetails />}/>
+            <Route path="/users/profile/:username" 
+                element={<ProtectedRoute element = {<UserProfile />} />}/>
+            <Route path="/users/profile/edit" 
+                element={<ProtectedRoute element = {<UserEditForm />} />}/>
+            <Route path="/explore" 
+                element={<ProtectedRoute element = {<ItinSearch />} />}/>
+            <Route path="/tags" 
+                element={<ProtectedRoute element = {<TagList />} />}/>
+            <Route path="/itineraries/new" 
+                element={<ProtectedRoute element = {<ItinForm />} />}/>
+            <Route path="/itineraries/:id" 
+                element={<ProtectedRoute element = {<ItinDetails />} />}/>
+            <Route path="/tags/:name" 
+                element={<ProtectedRoute element = {<TagDetails />} />}/>
             <Route path ="*" element={<Navigate to="/" />} />
         </Routes>
     )

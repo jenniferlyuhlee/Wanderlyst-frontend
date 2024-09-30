@@ -6,14 +6,17 @@ import useLocalStorageState from './hooks/useLocalStorageState'
 import UserContext from './auth-user/UserContext'
 import RouteList from './navigation/RouteList';
 import NavBar from './navigation/NavBar';
+import Loading from './shared/Loading'
 import './App.css'
 
 function App() {
-  // centralized states: user infoLoaded, currUser, token, likes
+  // centralized states: user infoLoaded, currUser, token
   const [infoLoaded, setInfoLoaded] = useState(false);
   const [currUser, setCurrUser] = useState(null);
   const [token, setToken] = useLocalStorageState('wanderlyst-token');
+  const [likes, setLikes] = useState(new Set([]));
   // Fetching tags at app level for multiple uses
+  const [tagsLoaded, setTagsLoaded] = useState(false);
   const [tags, setTags] = useState(null);
 
   // load user info from API after login, re-runs when token changes (user logs-in)
@@ -31,9 +34,10 @@ function App() {
             location: user.location,
             bio: user.bio,
             profilePic: user.profilePic,
-            isAdmin: user.isAdmin
+            isAdmin: user.isAdmin,
           }
           setCurrUser(currUser);
+          setLikes(new Set(user.likes.map(itin => itin.id)))
         }
         catch(err){
           setCurrUser(null);
@@ -47,11 +51,16 @@ function App() {
 
   // fetches tags from API upon initial load
   useEffect(function getTags() {
-      async function getAllTags(){
-          setTags(await WanderlystApi.getAllTags());
+    async function getAllTags(){
+      if(token){
+        const fetchedTags = await WanderlystApi.getAllTags()
+        setTags(fetchedTags);
       }
-      getAllTags();
-  }, []);
+      setTagsLoaded(true);
+    }
+    setTagsLoaded(false);
+    getAllTags();
+  }, [token]);
 
   // Handles signup, sets token and logins new user
   async function signup(data){
@@ -82,37 +91,41 @@ function App() {
     setToken(null);
   }
 
-  if (!infoLoaded) return <h1>..loading</h1>
+  // Checks if user has liked an itinerary
+  function hasLikedItin(itinId){
+    return likes.has(itinId);
+  }
+
+  // Likes/unlikes itinerary, adding to state of currUser.likes
+  async function toggleLike(itinId){
+    // unlike - remove from currUser.likes
+    if(hasLikedItin(itinId)){
+      await WanderlystApi.likeItin(currUser.username, itinId);
+      setLikes(new Set([...likes].filter(id => id !== itinId)));
+      return false;
+    } 
+    else{
+      // like - add to currUser.likes
+      await WanderlystApi.likeItin(currUser.username, itinId);
+      setLikes(new Set([...likes, itinId]));
+      return true;
+    }
+  }
+
+  if (!(infoLoaded && tagsLoaded)) return <Loading />;
   
   return (
     <UserContext.Provider
-      value = {{currUser, setCurrUser, logout, tags}}>
+      value = {{currUser, setCurrUser, logout, hasLikedItin, toggleLike, likes, tags}}>
       <NavBar />
       <div className='Body-content'>
         <RouteList login={login} signup={signup} />
       </div>
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='p-3 text-center text-secondary'>
+        <small>© 2024 Wanderlyst. Powered by Google Maps & Places APIs</small>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
    </UserContext.Provider>
   )
 }
 
-export default App
+export default App;

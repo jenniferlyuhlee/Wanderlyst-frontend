@@ -9,8 +9,7 @@ import Alert from "../shared/Alert";
  * Allow users to edit basic information or delete account
  */
 function UserEditForm(){
-    const { currUser, setCurrUser, logout } = useContext(UserContext);
-    let updatedUser;
+    const { currUser, setCurrUser } = useContext(UserContext);
     
     // states: formData, formErrors, saveConfirmed
     const [formData, setFormData] = useState({
@@ -41,7 +40,7 @@ function UserEditForm(){
             // removes duplicate confirmation password from data
             delete formData.confirmPassword  
             const cleanedFormData = cleanData(formData);
-            updatedUser=await WanderlystApi.updateUser(currUser.username, cleanedFormData);
+            updatedUser = await WanderlystApi.updateUser(currUser.username, cleanedFormData);
 
         }
         catch(err){
@@ -51,7 +50,15 @@ function UserEditForm(){
         // resets profile form to display updated info
         setFormErrors(null);
         setSaveConfirmed(true);
-        setCurrUser({username: updatedUser.username, isAdmin: updatedUser.isAdmin});
+        setCurrUser({
+            username: updatedUser.username, 
+            firstName: updatedUser.firstName,
+            lastName: updatedUser.lastName,
+            location: updatedUser.location,
+            bio: updatedUser.bio,
+            profilePic: updatedUser.profilePic,
+            isAdmin: updatedUser.isAdmin, 
+            likes: currUser.likes});
     }
     
 
@@ -59,24 +66,24 @@ function UserEditForm(){
     async function handleDelete(){
         try{
             alert(`deleted account!`)
-            // const deleted = await WanderlystApi.deleteUser(currUser.username)
-            // if (deleted){
-            //     logout()
-            // }
+            const deleted = await WanderlystApi.deleteUser(currUser.username)
+            if (deleted){
+                logout()
+            }
         }
         catch(err){
             setSettingErrors(err)
             return 
         }
     }
-    console.log
+
     return (
         <div className = "container">
             <NavLink to ={`/users/profile/${currUser.username}`}
-            className = "btn rounded-pill btn-secondary my-3">
+            className = "btn rounded-pill btn-secondary mt-4 mb-3">
                 Return
             </NavLink>
-        <div className = "card px-5">
+        <div className = "card px-5 mb-5">
             <h2>Edit User Info</h2>
             <form onSubmit = {handleSubmit} className = "row m-1">
                 <div className = "form-floating col-6 mb-2 p-0">
@@ -167,7 +174,7 @@ function UserEditForm(){
             </form>
             <hr/>
             <div>
-                <h3>Settings</h3>
+                <h3 className = "my-3">Settings</h3>
                 <button onClick={handleDelete} className="btn rounded-pill btn-lg btn-danger">
                     Delete Account
                 </button>

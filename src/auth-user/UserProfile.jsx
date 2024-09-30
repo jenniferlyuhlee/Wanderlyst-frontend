@@ -2,8 +2,9 @@ import React, { useState, useEffect, useContext} from "react";
 import { NavLink, useParams } from "react-router-dom";
 import WanderlystApi from "../utils/api";
 import UserContext from "./UserContext";
-import ItinCard from "../itineraries/ItinCard";
 import dateConvert from "../helpers/dateConvert";
+import ItinCard from "../itineraries/ItinCard";
+import Loading from "../shared/Loading";
 import "./UserProfile.css"
 
 /** User Profile Page Component
@@ -11,7 +12,7 @@ import "./UserProfile.css"
  */
 
 function UserProfile(){
-    const { currUser } = useContext(UserContext);
+    const { currUser} = useContext(UserContext);
     const { username } = useParams();
 
     // state set to null to use loading spinner
@@ -32,19 +33,19 @@ function UserProfile(){
             }
         }
         getUser();
-    }, [username]);
+    }, [username, currUser]);
 
     // toggle itineraries / likes
     function toggleDisplay(){
         setShowItins(state => !state)
     }
 
-    if(error) return <p>Sorry, this user could not be found.</p>
+    if(error) return <p className="NotFound">Sorry, this user could not be found.</p>
 
-    if(!user) return <h1>Loading...</h1>
+    if(!user) return <Loading />
 
     return(
-        <div className = "container pt-3">
+        <div className = "container pt-2 mb-5 body-cont">
             <h1 className = "Profile-title">@{user.username}</h1>
             <div className = "Profile-header">
                 <div className = "Profile-header-group">
@@ -61,7 +62,7 @@ function UserProfile(){
                             </p> 
                         : null}
                         {user.bio ? <p>{user.bio}</p> : null}
-                        <small><i>Joined {dateConvert(user.createdAt)}</i></small>
+                        <small className = "mt-2"><i>Joined {dateConvert(user.createdAt)}</i></small>
                         {currUser.username === user.username ? 
                         <NavLink to={`/users/profile/edit`}
                             className = "mt-3 btn btn-sm rounded-pill btn-secondary">
@@ -70,9 +71,11 @@ function UserProfile(){
                         : null}
                     </div>
                 </div>
-                <NavLink to="/itineraries/new" className="Profile-add-itin">
-                    <i className="bi bi-plus-circle-fill"></i>
-                </NavLink>
+                {currUser.username === user.username ? 
+                    <NavLink to="/itineraries/new" className="Profile-add-itin">
+                        <i className="bi bi-plus-circle-fill"></i>
+                    </NavLink>
+                : null}
             </div>
             <hr className = "Profile-separator"/>
             <div>

@@ -48,10 +48,9 @@ function LoginForm({login}){
 
     return(
         <div className = "Home">
-        <div className="container card px-5 auth-form" 
-            style={{width: '32rem'}}>
-            <h1 className = "text-center mb-4">Login</h1>
-            <p>Share & stay updated on unforgettable experiences.</p>
+        <div className="container card px-5 auth-form">
+            <h1 className = "text-center mb-3">Login</h1>
+            <p className = "my-2">Share & stay updated on unforgettable experiences.</p>
             <form onSubmit = {handleSubmit} className = "row">
                 <div className = "form-floating mb-3 p-0">
                     <input id = "username"

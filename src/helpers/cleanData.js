@@ -13,4 +13,4 @@ function cleanData(data){
     return cleanedData;
 }
 
-export default cleanData;
+export default cleanData; 

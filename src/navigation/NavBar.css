@@ -6,37 +6,54 @@
     background-color: white;
     display: flex;
     justify-content: space-between;
+    box-shadow: 0 1px 10px #e3e3e3;
     z-index: 1000;
 }
-/* background-color: rgb(102, 209, 149); */
 
 .NavBar-right{
     display: flex;
     align-items: center;
 }
 
+.NavBar-left{
+    display: flex;
+    align-items: center;
+}
+
+.NavBar-link-left:hover{
+    color: rgb(73, 150, 114);
+}
+
 .NavBar-link-right{
     color: #555555;
 }
 
-.NavBar-link-left:hover, .NavBar-link-right:hover{
+.NavBar-link-right:hover{
     color: black;
 }
 
 .NavBar-link-left{
-    color: rgb(94, 184, 219);
+    color: rgba(102, 209, 149);
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    margin-right: 0.5rem;
 }
 
 .NavBar-link-right{
     text-align: right;
-    margin-left: 1.5rem;
+    margin: 0 0.5rem;
 
 }
 
 .NavBar-link-right.active{
     font-weight: bold;
     color: black;
+}
+
+.NavBar-profilePic{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
 }

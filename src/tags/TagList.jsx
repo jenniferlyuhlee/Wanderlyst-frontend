@@ -2,25 +2,15 @@ import React, { useState, useEffect, useContext} from "react";
 import WanderlystApi from "../utils/api";
 import UserContext from "../auth-user/UserContext";
 import TagCard from "./TagCard";
+import Loading from "../shared/Loading";
 import "./TagList.css"
 
 function TagList(){
     const { tags } = useContext(UserContext);
-    // state set to null to use loading spinner
-    // const [tags, setTags] = useState(null);
-
-    // // fetches tags from API upon initial load
-    // useEffect(function getTags() {
-    //     async function getAllTags(){
-    //         setTags(await WanderlystApi.getAllTags());
-    //     }
-    //     getAllTags();
-    // }, []);
 
     if(!tags){
-        return(<h1>Loading...</h1>)
+        return <Loading />
     }
-    console.log(tags)
 
     return(
         <div className = "TagList">

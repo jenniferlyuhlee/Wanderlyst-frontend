@@ -50,10 +50,9 @@ function SignupForm({signup}){
 
     return(
         <div className = "Home">
-            <div className = "container card px-5 auth-form"
-                style = {{width: '32rem'}}>
-                <h1 className = "text-center mb-4">Signup</h1>
-                <p>Join now to share & uncover unforgettable experiences.</p>
+            <div className = "container card px-5 auth-form">
+                <h1 className = "text-center mb-3">Signup</h1>
+                <p className= "my-2">Join now to share & uncover unforgettable experiences.</p>
                 <form onSubmit = {handleSubmit} className = "row">
                     <div className = "form-floating mb-3 p-0">
                         <input id = "firstName"
@@ -78,7 +77,7 @@ function SignupForm({signup}){
                         <label htmlFor = "lastName">Last Name</label>
                     </div>
                     <div className = "form-floating mb-3 p-0">
-                        <input
+                        <input id = "email"
                             className = "form-control"
                             name = "email"
                             placeholder = "email"
@@ -89,7 +88,7 @@ function SignupForm({signup}){
                         <label htmlFor = "email">Email</label>
                     </div>
                     <div className = "form-floating mb-3 p-0">
-                        <input
+                        <input id = "username"
                             className = "form-control"
                             name = "username"
                             placeholder = "username"
@@ -100,7 +99,7 @@ function SignupForm({signup}){
                         <label htmlFor = "username">Username</label>
                     </div>
                     <div className = "form-floating mb-3 p-0">
-                        <input
+                        <input id = "password"
                             className = "form-control"
                             name = "password"
                             type = "password"

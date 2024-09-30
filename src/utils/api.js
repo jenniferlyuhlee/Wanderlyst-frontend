@@ -13,7 +13,7 @@ class WanderlystApi {
 
     // method to pass auth token and make different requests
     static async request(endpoint, data={}, method="get"){
-        console.debug("API Call:", endpoint, data, method);
+        console.debug("API Call:", endpoint, method);
 
         const url = `${BASE_URL}/${endpoint}`;
         const headers = { Authorization: `Bearer ${WanderlystApi.token }`};
@@ -67,7 +67,7 @@ class WanderlystApi {
     }
 
     /** Create itinerary */
-    static async createItin({data}){
+    static async createItin(data){
         let res = await this.request("itineraries", data, "post");
         return res.itinerary;
     }
