@@ -9,7 +9,7 @@ import UserContext from "../auth-user/UserContext";
 function ProtectedRoute({element}){
     const {currUser} = useContext(UserContext);
     if(!currUser){
-        return <Navigate to = "/login" />
+        return <Navigate to = "/" />
     }
     return element;
 }

@@ -75,13 +75,13 @@ describe("ItinForm component", () => {
     });
 
     test("handlePlaceChange being called when place form is updated", async () => {
-        const {debug, getByLabelText} = render(
+        const { getByLabelText} = render(
             <MemoryRouter>
                 <UserProvider>
                     <ItinForm />
                 </UserProvider>
             </MemoryRouter>);
-        debug();
+      
         // check that regular form fields being controlled
         const placeInput = getByLabelText("Place Name");
         

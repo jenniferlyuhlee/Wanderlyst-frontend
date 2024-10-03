@@ -92,7 +92,6 @@ function ItinForm(){
                     })
                 )
             };
-            console.log(itineraryData);
     
             const itinerary = await WanderlystApi.createItin(itineraryData);
             if (itinerary) navigate(`/itineraries/${itinerary.id}`)

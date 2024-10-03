@@ -66,7 +66,7 @@ function UserEditForm(){
        // delete user handler
     async function handleDelete(){
         try{
-            alert(`Deleted account!`)
+            alert(`Account deleted.`)
             const deleted = await WanderlystApi.deleteUser(currUser.username)
             if (deleted){
                 logout();

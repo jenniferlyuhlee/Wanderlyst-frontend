@@ -45,6 +45,10 @@ function Home(){
                     <h1 className = "display-1 wanderlyst fw-medium">
                         WanderLyst
                     </h1>
+                    <h4><b>wan·der·lyst (/ˈwändərˌlist/)</b>
+                        <br/>
+                        a strong desire to travel and share one's <i>lysts</i>
+                    </h4>
                     <p className = "fs-6 mb-2">
                         Your go-to guide for planning and sharing itineraries that inspire.
                         Connect with journeys that fuel your desire to wander every corner of the world.

@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = import.meta.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 /** API Class
  * Static class that ties together methods to get/send to the app API
@@ -13,7 +12,7 @@ class WanderlystApi {
 
     // method to pass auth token and make different requests
     static async request(endpoint, data={}, method="get"){
-        console.debug("API Call:", endpoint, method);
+        // console.debug("API Call:", endpoint, method);
 
         const url = `${BASE_URL}/${endpoint}`;
         const headers = { Authorization: `Bearer ${WanderlystApi.token }`};
@@ -24,10 +23,14 @@ class WanderlystApi {
         }
         catch(err){
             if(axios.isAxiosError(err)){
-                // console.log("API Error:", err);
-                if(!err.response) throw ["Network Error"]
-                let message = err.response.data.error.message;
-                throw Array.isArray(message) ? message : [message];
+                // Checks i err has response from server
+                if(err.response){
+                    let message = err.response.data.error.message;
+                    throw Array.isArray(message) ? message : [message];
+                }
+                else{
+                    throw ["Network Error"];
+                }
             }
         }
             

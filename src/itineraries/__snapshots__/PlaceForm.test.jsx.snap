@@ -49,6 +49,7 @@ exports[`TagsSelect sub-form component > matches snapshot 1`] = `
     >
       <textarea
         class="form-control"
+        id="description2"
         name="description"
         placeholder="Share what you did or can do here! Plus any time expectations, highlights, tips, important precautions etc. "
         required=""

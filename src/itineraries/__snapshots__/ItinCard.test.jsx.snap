@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`TagCard component > matches snapshot 1`] = `
+exports[`ItinCard component > matches snapshot 1`] = `
 <DocumentFragment>
   <div
     class="ItinCard color-card card my-3 p-4"

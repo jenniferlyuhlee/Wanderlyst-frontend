@@ -47,6 +47,16 @@ exports[`App component > matches snapshot  1`] = `
         >
           WanderLyst
         </h1>
+        <h4>
+          <b>
+            wan·der·lyst (/ˈwändərˌlist/)
+          </b>
+          <br />
+          a strong desire to travel and share one's 
+          <i>
+            lysts
+          </i>
+        </h4>
         <p
           class="fs-6 mb-2"
         >

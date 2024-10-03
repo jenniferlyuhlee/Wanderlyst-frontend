@@ -125,7 +125,7 @@ function ItinDetails(){
             </div>
 
             <div className="Itin-Places">
-                    {itinerary.places.map(p => (
+                    {itinerary.places.sort((a, b) => a.seq - b.seq).map(p => (
                         <div key = {p.seq} className="Place">
                         <p>
                             <b>{p.seq}. {p.name}</b>
