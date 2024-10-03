@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   // Set root directory to src
   build: {
-    outDir: '../dist'
+    outDir: 'dist'
   },
   test: {
     globals: true,
