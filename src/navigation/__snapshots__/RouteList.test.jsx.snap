@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RouteList component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Home"
+  >
+    <div
+      class="Home-title"
+    >
+      <div
+        class="Home-header"
+      >
+        <h1
+          class="display-1 wanderlyst fw-medium"
+        >
+          Welcome testfirst!
+        </h1>
+        <img
+          class="Home-gif"
+          src="https://www.futurewings.co.za/wp-content/uploads/2023/07/giphy.gif"
+        />
+      </div>
+      <p
+        class="fs-6 mb-2"
+      >
+        Your go-to guide for planning and sharing itineraries that inspire. Connect with journeys that fuel your desire to wander every corner of the world.
+      </p>
+      <a
+        class="rounded-pill btn btn-lg btn-primary me-2"
+        href="/explore"
+      >
+        Search itineraries
+      </a>
+      <p
+        class="fs-6 mt-4 mb-2"
+      >
+        Don't know where to start? Click below to explore a random tag.
+      </p>
+      <a
+        class="rounded-pill btn btn-lg btn-primary"
+        href="/tags/Foodie"
+      >
+        Explore a tag
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

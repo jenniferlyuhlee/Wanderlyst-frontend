@@ -4,6 +4,11 @@ import UserContext from "../auth-user/UserContext";
 import pickRandom from "../helpers/random";
 import "./Home.css"
 
+/** Home page component
+ *  Displays different content based on currUser
+ *  Includes functionality to navigate to random tag detail page
+ */
+
 function Home(){
     const { currUser, tags } = useContext(UserContext);
 
@@ -12,9 +17,13 @@ function Home(){
             <div className = "Home-title">
                 {currUser ?
                 <>
-                    <h1 className = "display-1">
-                        Welcome {currUser.firstName}!
-                    </h1>
+                    <div className = "Home-header">
+                        <h1 className = "display-1 wanderlyst fw-medium">
+                            Welcome {currUser.firstName}!
+                        </h1>
+                        <img className = "Home-gif" 
+                            src = "https://www.futurewings.co.za/wp-content/uploads/2023/07/giphy.gif" />
+                    </div>
                     <p className = "fs-6 mb-2">
                         Your go-to guide for planning and sharing itineraries that inspire.
                         Connect with journeys that fuel your desire to wander every corner of the world.
@@ -33,8 +42,8 @@ function Home(){
                 </>
                 :
                 <>
-                    <h1 className = "display-1">
-                        Wanderlyst
+                    <h1 className = "display-1 wanderlyst fw-medium">
+                        WanderLyst
                     </h1>
                     <p className = "fs-6 mb-2">
                         Your go-to guide for planning and sharing itineraries that inspire.

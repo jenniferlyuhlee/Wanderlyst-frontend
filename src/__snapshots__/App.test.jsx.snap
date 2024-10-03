@@ -1,0 +1,72 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App component > matches snapshot  1`] = `
+<DocumentFragment>
+  <nav
+    class="NavBar"
+  >
+    <div
+      class="NavBar-left"
+    >
+      <a
+        aria-current="page"
+        class="NavBar-link-left wanderlyst active"
+        href="/"
+      >
+        WanderLyst
+      </a>
+    </div>
+    <div
+      class="NavBar-right"
+    >
+      <a
+        class="NavBar-link-right"
+        href="/signup"
+      >
+        Signup
+      </a>
+      <a
+        class="NavBar-link-right"
+        href="/login"
+      >
+        Login
+      </a>
+    </div>
+  </nav>
+  <div
+    class="Body-content"
+  >
+    <div
+      class="Home"
+    >
+      <div
+        class="Home-title"
+      >
+        <h1
+          class="display-1 wanderlyst fw-medium"
+        >
+          WanderLyst
+        </h1>
+        <p
+          class="fs-6 mb-2"
+        >
+          Your go-to guide for planning and sharing itineraries that inspire. Connect with journeys that fuel your desire to wander every corner of the world.
+        </p>
+        <a
+          class="rounded-pill btn btn-lg btn-primary"
+          href="/signup"
+        >
+          Join now
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="p-3 text-center text-secondary"
+  >
+    <small>
+      © 2024 Wanderlyst. Powered by Google Maps & Places APIs
+    </small>
+  </div>
+</DocumentFragment>
+`;

@@ -7,6 +7,11 @@ export default defineConfig({
   // Set root directory to src
   build: {
     outDir: '../dist'
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    css: true,
   }
 })
 

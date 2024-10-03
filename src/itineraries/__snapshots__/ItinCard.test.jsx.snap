@@ -1,0 +1,55 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TagCard component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ItinCard color-card card my-3 p-4"
+  >
+    <a
+      class="ItinCard-link"
+      href="/itineraries/1"
+    >
+      <h4
+        class="card-title"
+      >
+        testItin
+      </h4>
+    </a>
+    <hr
+      class="m-0"
+    />
+    <div
+      class="ItinCard-body mt-1"
+    >
+      <div
+        class="ItinCard-info"
+      >
+        <small
+          class="card-subtitle m-0"
+        >
+          testCity, testCountry
+        </small>
+        <br />
+        <small>
+          Duration: 1 days
+        </small>
+        <p>
+          <a
+            href="/users/profile/testUser"
+          >
+            <b>
+              testUser 
+            </b>
+          </a>
+          Itin for testing.
+        </p>
+      </div>
+      <div>
+        <i
+          class="bi bi-heart"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

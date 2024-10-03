@@ -1,0 +1,142 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ItinSearch component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container px-5 mb-5 body-cont"
+  >
+    <h3
+      class="text-center pb-3"
+    >
+      Where will you wander next?
+    </h3>
+    <form
+      class="row"
+    >
+      <div
+        class="col-12 form-floating p-0"
+      >
+        <input
+          class="form-control"
+          id="title"
+          name="title"
+          placeholder="title"
+          value=""
+        />
+        <label
+          for="title"
+        >
+          Title
+        </label>
+      </div>
+      <div
+        class="col-6 form-floating p-0"
+      >
+        <input
+          class="form-control"
+          id="country"
+          name="country"
+          placeholder="country"
+          value=""
+        />
+        <label
+          for="country"
+        >
+          Country
+        </label>
+      </div>
+      <div
+        class="col-6 form-floating p-0"
+      >
+        <input
+          class="form-control"
+          id="duration"
+          min="1"
+          name="duration"
+          placeholder="duration"
+          type="number"
+          value=""
+        />
+        <label
+          for="duration"
+        >
+          Max duration (days)
+        </label>
+      </div>
+      <div
+        class="col-12 form-floating p-0"
+      >
+        <select
+          class="form-select"
+          id="tags"
+          multiple=""
+          name="tags"
+          size="3"
+          style="height: 5rem;"
+        >
+          <option
+            value="Foodie"
+          >
+            Foodie
+          </option>
+          <option
+            value="Explorer"
+          >
+            Explorer
+          </option>
+          <option
+            value="Shopaholic"
+          >
+            Shopaholic
+          </option>
+          <option
+            value="Naturalist"
+          >
+            Naturalist
+          </option>
+          <option
+            value="Daredevil"
+          >
+            Daredevil
+          </option>
+          <option
+            value="Flâneur"
+          >
+            Flâneur
+          </option>
+          <option
+            value="Reveller"
+          >
+            Reveller
+          </option>
+          <option
+            value="Aesthete"
+          >
+            Aesthete
+          </option>
+          <option
+            value="Relaxationist"
+          >
+            Relaxationist
+          </option>
+          <option
+            value="Photographer"
+          >
+            Photographer
+          </option>
+        </select>
+        <label
+          for="tags"
+        >
+          Filter by tags
+        </label>
+      </div>
+      <button
+        class="btn rounded-pill btn-lg btn-primary mt-3"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

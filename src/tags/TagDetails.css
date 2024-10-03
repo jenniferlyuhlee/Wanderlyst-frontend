@@ -2,10 +2,16 @@
     margin-bottom: 3rem;
 }
 
+.TagName{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5%;
+    width: 100%;
+    height: 10%;
+}
+
 .TagName-bg{
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 5%;
     color: white;
 }
 

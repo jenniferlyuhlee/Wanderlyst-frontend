@@ -1,0 +1,159 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`UserEditForm Component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <a
+      class="btn rounded-pill btn-secondary mt-4 mb-3"
+      href="/users/profile/testadmin"
+    >
+      Return
+    </a>
+    <div
+      class="card px-5 mb-5"
+    >
+      <h2>
+        Edit User Info
+      </h2>
+      <form
+        class="row m-1"
+      >
+        <div
+          class="form-floating col-6 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            placeholder="firstName"
+            value="testfirst"
+          />
+          <label
+            for="firstName"
+          >
+            First Name
+          </label>
+        </div>
+        <div
+          class="form-floating col-6 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            id="lastName"
+            name="lastName"
+            placeholder="lastName"
+            value="testlast"
+          />
+          <label
+            for="lastName"
+          >
+            Last Name
+          </label>
+        </div>
+        <div
+          class="form-floating col-12 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            id="location"
+            name="location"
+            placeholder="location"
+            value="testloc"
+          />
+          <label
+            for="location"
+          >
+            Location
+          </label>
+        </div>
+        <div
+          class="form-floating col-12 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            id="bio"
+            name="bio"
+            placeholder="bio"
+            value="testbio"
+          />
+          <label
+            for="bio"
+          >
+            Bio
+          </label>
+        </div>
+        <div
+          class="form-floating col-12 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            id="profilePic"
+            name="profilePic"
+            placeholder="profilePic"
+            value=""
+          />
+          <label
+            for="profilePic"
+          >
+            Profile Pic URL
+          </label>
+        </div>
+        <div
+          class="form-floating col-6 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            disabled=""
+            id="username"
+            name="username"
+            placeholder="username"
+            value="testadmin"
+          />
+          <label
+            for="username"
+          >
+            Username
+          </label>
+        </div>
+        <div
+          class="form-floating col-6 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="password"
+            type="password"
+            value=""
+          />
+          <label
+            for="password"
+          >
+            New Password
+          </label>
+        </div>
+        <button
+          class="btn rounded-pill btn-lg btn-primary"
+        >
+          Save
+        </button>
+      </form>
+      <hr
+        class="my-3"
+      />
+      <div>
+        <h3>
+          Settings
+        </h3>
+        <button
+          class="btn rounded-pill btn-lg btn-danger"
+        >
+          Delete Account
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

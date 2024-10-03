@@ -17,7 +17,7 @@ function LoginForm({login}){
     // hooks called unconditionally
     const { currUser } = useContext(UserContext);
     const navigate = useNavigate();
-
+  
     // conditional rendering - redirects logged in users to homepage
        if(currUser){
         return <Navigate to="/" />

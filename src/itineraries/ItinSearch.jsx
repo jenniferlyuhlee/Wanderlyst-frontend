@@ -3,6 +3,10 @@ import WanderlystApi from "../utils/api";
 import cleanData from "../helpers/cleanData";
 import ItinCard from "./ItinCard";
 
+/** ItinSearch form component
+ * Renders search form for users to get itinerary results 
+ * based on filters
+ */
 function ItinSearch( ){
     const initialState = {
         title: "",
@@ -39,7 +43,7 @@ function ItinSearch( ){
     return(
         <div className = "container px-5 mb-5 body-cont">
             <h3 className = "text-center pb-3">
-                Where will you go next?
+                Where will you wander next?
             </h3>
             <form onSubmit = {handleSubmit} className = "row">
                 <div className = "col-12 form-floating p-0">
@@ -92,7 +96,7 @@ function ItinSearch( ){
                         <option value="Relaxationist">Relaxationist</option>
                         <option value="Photographer">Photographer</option>
                     </select>
-                    <label htmlFor="tag">Filter by tags</label>
+                    <label htmlFor="tags">Filter by tags</label>
                 </div>
                 <button className = "btn rounded-pill btn-lg btn-primary mt-3">
                     Search

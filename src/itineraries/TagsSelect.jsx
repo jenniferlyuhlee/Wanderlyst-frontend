@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import UserContext from "../auth-user/UserContext";
 
+/** TagsSelect Form component
+ * Displays select form for users to select as many tags for their Itinerari
+ * props (inherited from parent ItinForm): selectedTags, handleTagChange
+ */
 function TagsSelect( {selectedTags, handleTagChange} ){
     const { tags } = useContext(UserContext);
 

@@ -8,8 +8,9 @@ import Alert from "../shared/Alert";
 /** User Edit Form component
  * Allow users to edit basic information or delete account
  */
+
 function UserEditForm(){
-    const { currUser, setCurrUser } = useContext(UserContext);
+    const { currUser, setCurrUser, logout} = useContext(UserContext);
     
     // states: formData, formErrors, saveConfirmed
     const [formData, setFormData] = useState({
@@ -65,15 +66,14 @@ function UserEditForm(){
        // delete user handler
     async function handleDelete(){
         try{
-            alert(`deleted account!`)
+            alert(`Deleted account!`)
             const deleted = await WanderlystApi.deleteUser(currUser.username)
             if (deleted){
-                logout()
+                logout();
             }
         }
         catch(err){
-            setSettingErrors(err)
-            return 
+            setSettingErrors(err);
         }
     }
 
@@ -172,9 +172,9 @@ function UserEditForm(){
                     null
                 }
             </form>
-            <hr/>
+            <hr  className = "my-3"/>
             <div>
-                <h3 className = "my-3">Settings</h3>
+                <h3>Settings</h3>
                 <button onClick={handleDelete} className="btn rounded-pill btn-lg btn-danger">
                     Delete Account
                 </button>

@@ -23,10 +23,14 @@ class WanderlystApi {
             return (await axios({ url, method, data, params, headers })).data;
         }
         catch(err){
-            console.error("API Error:", err.response);
-            let message = err.response.data.error.message;
-            throw Array.isArray(message) ? message : [message];
+            if(axios.isAxiosError(err)){
+                // console.log("API Error:", err);
+                if(!err.response) throw ["Network Error"]
+                let message = err.response.data.error.message;
+                throw Array.isArray(message) ? message : [message];
+            }
         }
+            
     }
 
     /*****************API routes*****************/

@@ -1,0 +1,114 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NavBar component: anon > matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="NavBar"
+  >
+    <div
+      class="NavBar-left"
+    >
+      <a
+        aria-current="page"
+        class="NavBar-link-left wanderlyst active"
+        href="/"
+      >
+        WanderLyst
+      </a>
+    </div>
+    <div
+      class="NavBar-right"
+    >
+      <a
+        class="NavBar-link-right"
+        href="/signup"
+      >
+        Signup
+      </a>
+      <a
+        class="NavBar-link-right"
+        href="/login"
+      >
+        Login
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`NavBar component: currUser > matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="NavBar"
+  >
+    <div
+      class="NavBar-left"
+    >
+      <a
+        aria-current="page"
+        class="NavBar-link-left wanderlyst active"
+        href="/"
+      >
+        WanderLyst
+      </a>
+      <a
+        class="NavBar-link-right"
+        href="/explore"
+      >
+        Explore
+      </a>
+      <a
+        class="NavBar-link-right"
+        href="/tags"
+      >
+        Tags
+      </a>
+      <a
+        class="NavBar-link-right"
+        href="/itineraries/new"
+      >
+        Share
+      </a>
+    </div>
+    <div
+      class="NavBar-right"
+    >
+      <div
+        class="dropdown NavBar-link-right"
+      >
+        <img
+          aria-expanded="false"
+          class="NavBar-profilePic dropdown-toggle"
+          data-bs-toggle="dropdown"
+          href="#"
+          role="button"
+          src="/src/assets/default_profile.jpg"
+        />
+        <ul
+          class="dropdown-menu text-center p-2"
+        >
+          <li>
+            <a
+              class="NavBar-link-right"
+              href="/users/profile/testadmin"
+            >
+              Profile
+            </a>
+          </li>
+          <hr
+            class="my-1"
+          />
+          <li>
+            <a
+              class="NavBar-link-right"
+              href="/"
+            >
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

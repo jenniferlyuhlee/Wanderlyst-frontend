@@ -1,8 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../auth-user/UserContext";
 import "./ItinCard.css"
 
+/** ItinCard component
+ *  Props: itinerary{name, city, country, duration...}
+ *  Displays itinerary preview for search, tags, profile pages
+ */
 function ItinCard({itinerary}){
     const { currUser, toggleLike, hasLikedItin } = useContext(UserContext);
     const [liked, setLiked] = useState(hasLikedItin(itinerary.id));
@@ -31,7 +35,10 @@ function ItinCard({itinerary}){
                             Duration: {itinerary.duration} days
                         </small>
                         <p>
-                            <b>{itinerary.username}</b> {itinerary.description}
+                            <Link to={`/users/profile/${itinerary.username}`}>
+                                <b>{itinerary.username} </b>
+                            </Link> 
+                            {itinerary.description}
                         </p>
                     </div>
                     {itinerary.username === currUser.username?

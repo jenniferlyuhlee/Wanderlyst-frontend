@@ -1,0 +1,457 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ItinDetails component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Itin-details card body-cont"
+  >
+    <div
+      class="Itin-info mb-2"
+    >
+      <div
+        class="Itin-info-head"
+      >
+        <h1>
+          test title
+        </h1>
+        <h3
+          class=""
+        >
+          test city, test country
+        </h3>
+        <h5>
+          1 days
+        </h5>
+        <div
+          class="Itin-tags"
+        >
+          <a
+            class=""
+            href="/tags/testTag"
+          >
+            <span
+              class="badge text-bg-primary"
+            >
+              testTag
+            </span>
+          </a>
+        </div>
+        <p>
+          By: 
+          <a
+            class=""
+            href="/users/profile/testuser"
+          >
+            @testuser
+          </a>
+        </p>
+        <p>
+          Posted: 2024-10-01
+        </p>
+      </div>
+      <div
+        class="Itin-info-likes"
+      >
+        <div
+          class="Itin-likes"
+        >
+          <i
+            class="bi bi-heart-fill"
+          />
+          <p
+            class="ms-1"
+          >
+            1
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p
+      class="mt-2 mb-3"
+    >
+      test desc
+    </p>
+    <div
+      class="Itin-map mb-4"
+    >
+      <div>
+        <div
+          data-testid="mock-google-map"
+        >
+          Mock Google Map
+        </div>
+      </div>
+    </div>
+    <div
+      class="Itin-Places"
+    >
+      <div
+        class="Place"
+      >
+        <p>
+          <b>
+            1. test place
+          </b>
+          <br />
+          <i>
+            test address
+          </i>
+          <br />
+        </p>
+        <p
+          class="mx-3"
+        >
+          test place desc
+        </p>
+        <img
+          alt="test place"
+          class="Place-img"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ItinDetails component > renders without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="Itin-details card body-cont"
+  >
+    <div
+      class="Itin-info mb-2"
+    >
+      <div
+        class="Itin-info-head"
+      >
+        <h1>
+          test title
+        </h1>
+        <h3
+          class=""
+        >
+          test city, test country
+        </h3>
+        <h5>
+          1 days
+        </h5>
+        <div
+          class="Itin-tags"
+        >
+          <a
+            class=""
+            href="/tags/testTag"
+          >
+            <span
+              class="badge text-bg-primary"
+            >
+              testTag
+            </span>
+          </a>
+        </div>
+        <p>
+          By: 
+          <a
+            class=""
+            href="/users/profile/testuser"
+          >
+            @testuser
+          </a>
+        </p>
+        <p>
+          Posted: 2024-10-01
+        </p>
+      </div>
+      <div
+        class="Itin-info-likes"
+      >
+        <div
+          class="Itin-likes"
+        >
+          <i
+            class="bi bi-heart-fill"
+          />
+          <p
+            class="ms-1"
+          >
+            1
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p
+      class="mt-2 mb-3"
+    >
+      test desc
+    </p>
+    <div
+      class="Itin-map mb-4"
+    >
+      <div>
+        <div
+          data-testid="mock-google-map"
+        >
+          Mock Google Map
+        </div>
+      </div>
+    </div>
+    <div
+      class="Itin-Places"
+    >
+      <div
+        class="Place"
+      >
+        <p>
+          <b>
+            1. test place
+          </b>
+          <br />
+          <i>
+            test address
+          </i>
+          <br />
+        </p>
+        <p
+          class="mx-3"
+        >
+          test place desc
+        </p>
+        <img
+          alt="test place"
+          class="Place-img"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ItinDetails component > renders without crashing 2`] = `
+<DocumentFragment>
+  <div
+    class="Itin-details card body-cont"
+  >
+    <div
+      class="Itin-info mb-2"
+    >
+      <div
+        class="Itin-info-head"
+      >
+        <h1>
+          test title
+        </h1>
+        <h3
+          class=""
+        >
+          test city, test country
+        </h3>
+        <h5>
+          1 days
+        </h5>
+        <div
+          class="Itin-tags"
+        >
+          <a
+            class=""
+            href="/tags/testTag"
+          >
+            <span
+              class="badge text-bg-primary"
+            >
+              testTag
+            </span>
+          </a>
+        </div>
+        <p>
+          By: 
+          <a
+            class=""
+            href="/users/profile/testuser"
+          >
+            @testuser
+          </a>
+        </p>
+        <p>
+          Posted: 2024-10-01
+        </p>
+      </div>
+      <div
+        class="Itin-info-likes"
+      >
+        <div
+          class="Itin-likes"
+        >
+          <i
+            class="bi bi-heart-fill"
+          />
+          <p
+            class="ms-1"
+          >
+            1
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p
+      class="mt-2 mb-3"
+    >
+      test desc
+    </p>
+    <div
+      class="Itin-map mb-4"
+    >
+      <div>
+        <div
+          data-testid="mock-google-map"
+        >
+          Mock Google Map
+        </div>
+      </div>
+    </div>
+    <div
+      class="Itin-Places"
+    >
+      <div
+        class="Place"
+      >
+        <p>
+          <b>
+            1. test place
+          </b>
+          <br />
+          <i>
+            test address
+          </i>
+          <br />
+        </p>
+        <p
+          class="mx-3"
+        >
+          test place desc
+        </p>
+        <img
+          alt="test place"
+          class="Place-img"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ItinDetails component > user can like itinerary 1`] = `
+<DocumentFragment>
+  <div
+    class="Itin-details card body-cont"
+  >
+    <div
+      class="Itin-info mb-2"
+    >
+      <div
+        class="Itin-info-head"
+      >
+        <h1>
+          test title
+        </h1>
+        <h3
+          class=""
+        >
+          test city, test country
+        </h3>
+        <h5>
+          1 days
+        </h5>
+        <div
+          class="Itin-tags"
+        >
+          <a
+            class=""
+            href="/tags/testTag"
+          >
+            <span
+              class="badge text-bg-primary"
+            >
+              testTag
+            </span>
+          </a>
+        </div>
+        <p>
+          By: 
+          <a
+            class=""
+            href="/users/profile/testuser"
+          >
+            @testuser
+          </a>
+        </p>
+        <p>
+          Posted: 2024-10-01
+        </p>
+      </div>
+      <div
+        class="Itin-info-likes"
+      >
+        <div
+          class="Itin-likes"
+        >
+          <i
+            class="bi bi-heart-fill"
+          />
+          <p
+            class="ms-1"
+          >
+            1
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p
+      class="mt-2 mb-3"
+    >
+      test desc
+    </p>
+    <div
+      class="Itin-map mb-4"
+    >
+      <div>
+        <div
+          data-testid="mock-google-map"
+        >
+          Mock Google Map
+        </div>
+      </div>
+    </div>
+    <div
+      class="Itin-Places"
+    >
+      <div
+        class="Place"
+      >
+        <p>
+          <b>
+            1. test place
+          </b>
+          <br />
+          <i>
+            test address
+          </i>
+          <br />
+        </p>
+        <p
+          class="mx-3"
+        >
+          test place desc
+        </p>
+        <img
+          alt="test place"
+          class="Place-img"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

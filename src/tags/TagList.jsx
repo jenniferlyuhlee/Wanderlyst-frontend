@@ -5,6 +5,10 @@ import TagCard from "./TagCard";
 import Loading from "../shared/Loading";
 import "./TagList.css"
 
+/** TagList Page Component
+ * Displays all tags and links to detailed pages
+ */
+
 function TagList(){
     const { tags } = useContext(UserContext);
 
@@ -15,8 +19,8 @@ function TagList(){
     return(
         <div className = "TagList">
             <div className="TagList-text">
-                <p className = "fs-4 mb-4">Explore itineraries by tags</p>
-                <p>On Wanderlyst, we categorize itineraries by 10 different tags—each corresponding 
+                <p className = "fs-4 mb-4 wanderlyst">Explore itineraries by tags</p>
+                <p className = "fw-semibold">On Wanderlyst, we categorize itineraries by 10 different tags—each corresponding 
                 to a travel style and identity. Click on each tag to learn more.</p>
             </div>
             <div className = "TagList-grid">

@@ -24,6 +24,16 @@
     padding: 2rem 3rem;
 }
 
+.Profile-separator{
+    margin: 2rem 0 0 0;
+}
+
+@media (max-width: 1200px){
+    .Profile-separator{
+        margin: 1rem 0 0 0;
+    }
+}
+
 @media (max-width: 800px){
     .Profile-header{
         flex-direction: column;
@@ -40,20 +50,14 @@
         margin-top: 1rem;
         padding: 0;
     }
-}
-
-.Profile-separator{
-    margin: 2rem 0 0 0;
-}
-
-@media (max-width: 1200px){
     .Profile-separator{
-        margin: 1rem 0 0 0;
+        margin: 0;
     }
 }
 
 .Profile-add-itin{
     color: rgba(102, 209, 149);
+    margin: 0.5rem;
 }
 
 .Profile-itins-menu{

@@ -7,6 +7,10 @@ import {
     useMap
 } from "@vis.gl/react-google-maps";
 
+/**
+ * Code reference: https://github.com/visgl/react-google-maps/discussions/93
+ */
+
 function GoogleMap ({itinerary}) {
     // reference to map 
     const mapRef = useMap();

@@ -1,0 +1,119 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TagList component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="TagList"
+  >
+    <div
+      class="TagList-text"
+    >
+      <p
+        class="fs-4 mb-4 wanderlyst"
+      >
+        Explore itineraries by tags
+      </p>
+      <p
+        class="fw-semibold"
+      >
+        On Wanderlyst, we categorize itineraries by 10 different tags—each corresponding to a travel style and identity. Click on each tag to learn more.
+      </p>
+    </div>
+    <div
+      class="TagList-grid"
+    >
+      <a
+        class="TagCard"
+        href="/tags/Foodie"
+      >
+        <div
+          class="Tag-bg tag-bg-Foodie"
+        >
+          <div
+            class="TagCard-overlay"
+          >
+            <h4>
+              Foodie
+            </h4>
+          </div>
+        </div>
+      </a>
+      <a
+        class="TagCard"
+        href="/tags/Explorer"
+      >
+        <div
+          class="Tag-bg tag-bg-Explorer"
+        >
+          <div
+            class="TagCard-overlay"
+          >
+            <h4>
+              Explorer
+            </h4>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TagList component > matches snapshot 2`] = `
+<DocumentFragment>
+  <div
+    class="TagList"
+  >
+    <div
+      class="TagList-text"
+    >
+      <p
+        class="fs-4 mb-4 wanderlyst"
+      >
+        Explore itineraries by tags
+      </p>
+      <p
+        class="fw-semibold"
+      >
+        On Wanderlyst, we categorize itineraries by 10 different tags—each corresponding to a travel style and identity. Click on each tag to learn more.
+      </p>
+    </div>
+    <div
+      class="TagList-grid"
+    >
+      <a
+        class="TagCard"
+        href="/tags/Foodie"
+      >
+        <div
+          class="Tag-bg tag-bg-Foodie"
+        >
+          <div
+            class="TagCard-overlay"
+          >
+            <h4>
+              Foodie
+            </h4>
+          </div>
+        </div>
+      </a>
+      <a
+        class="TagCard"
+        href="/tags/Explorer"
+      >
+        <div
+          class="Tag-bg tag-bg-Explorer"
+        >
+          <div
+            class="TagCard-overlay"
+          >
+            <h4>
+              Explorer
+            </h4>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

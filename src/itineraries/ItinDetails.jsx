@@ -1,21 +1,25 @@
 import React, { useState, useEffect, useContext, useRef, forwardRef} from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, useNavigate } from "react-router-dom";
 import WanderlystApi from "../utils/api";
 import UserContext from "../auth-user/UserContext";
 import GoogleMap from "./GoogleMap";
 import Loading from "../shared/Loading";
+import Alert from "../shared/Alert";
 import "./ItinDetails.css"
 import { APIProvider} from "@vis.gl/react-google-maps";
 
 
 function ItinDetails(){
-    const { currUser, toggleLike, hasLikedItin } = useContext(UserContext);
+    const { currUser, likes, toggleLike, hasLikedItin } = useContext(UserContext);
     const { id } = useParams();
-
+    const navigate = useNavigate();
+ 
     // state set to null to use loading spinner
     const [itinerary, setItinerary] = useState(null);
     // error state for invalid param - itinerary id 
     const [error, setError] = useState(false);
+    // error message state 
+    const [errorMsg, setErrorMsg] = useState(null);
     // status to set liked status - convert id param to integer
     const [liked, setLiked] = useState(hasLikedItin(+id));
 
@@ -32,19 +36,35 @@ function ItinDetails(){
             }
         }
         getItin();
-    }, [id, currUser, itinerary]);
+    }, [id, likes]);
+
+    // function to delete itinerary
+    async function deleteItin(){
+        try{
+           const resp = await WanderlystApi.deleteItin(id, currUser.username);
+           if (resp.deleted === +id) navigate('/');
+        }
+        catch(err){
+            setErrorMsg([err]);
+        }
+    }
 
     // function to handle likes
     async function handleLike(){
-        toggleLike(id);
+        toggleLike(+id);
         setLiked(likeState => !likeState);
     }
 
-    if(error) return <p className="NotFound">Sorry this itinerary doesn't exist.</p>
+    if(error) return <p className="NotFound"><i>Sorry this itinerary doesn't exist.</i></p>
     if(!itinerary) return <Loading />
 
     return(
-        <div className = "Itin-details card">
+        <div className = "Itin-details card body-cont">
+                {errorMsg?
+                    <Alert type = "danger" messages = {errorMsg}/>
+                    :
+                    null
+                }
             <div className = "Itin-info mb-2">
                 <div className="Itin-info-head">
                 <h1>{itinerary.title}</h1>
@@ -72,10 +92,15 @@ function ItinDetails(){
                 </div>
                 <div className="Itin-info-likes">
                     {itinerary.username === currUser.username?
+                        <>
+                        <div className="text-start">
+                            <i className="bi bi-trash3-fill" onClick={deleteItin}/>
+                        </div>
                         <div className="Itin-likes">
                             <i className ="bi bi-heart likes-display" />
                             <p className="ms-1">{itinerary.likes}</p>
                         </div>
+                        </>
                         :
                         <div className="Itin-likes">
                             {liked ?

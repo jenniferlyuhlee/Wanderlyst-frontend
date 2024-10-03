@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Alert component > matches snapshot for error alerts 1`] = `
+<DocumentFragment>
+  <div
+    class="alert alert-danger my-2"
+    role="alert"
+  >
+    <p
+      class="small m-0"
+    >
+      Password needs to be atleast 5 characters.
+    </p>
+    <p
+      class="small m-0"
+    >
+      Username taken.
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert component > matches snapshot for success alerts 1`] = `
+<DocumentFragment>
+  <div
+    class="alert alert-success my-2"
+    role="alert"
+  >
+    <p
+      class="small m-0"
+    >
+      Successful
+    </p>
+    <p
+      class="small m-0"
+    >
+      Saved
+    </p>
+  </div>
+</DocumentFragment>
+`;

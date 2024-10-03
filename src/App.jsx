@@ -10,7 +10,7 @@ import Loading from './shared/Loading'
 import './App.css'
 
 function App() {
-  // centralized states: user infoLoaded, currUser, token
+  // centralized states: infoLoaded, currUser, token, likes, tagsLoaded, tags
   const [infoLoaded, setInfoLoaded] = useState(false);
   const [currUser, setCurrUser] = useState(null);
   const [token, setToken] = useLocalStorageState('wanderlyst-token');

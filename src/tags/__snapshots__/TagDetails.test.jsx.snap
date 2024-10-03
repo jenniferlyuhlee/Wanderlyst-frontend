@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TagDetails component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="TagDetails"
+  >
+    <div
+      class="TagName-bg TagName-bg-testTag"
+    >
+      <h1
+        class="text-center display-4 wanderlyst fw-medium TagName"
+      >
+        testTag
+      </h1>
+    </div>
+    <div
+      class="container"
+    >
+      <p
+        class="m-4"
+      >
+        Tag for testing.
+      </p>
+      <p
+        class="text-center fst-italic"
+      >
+        <i>
+          Sorry, no itineraries have been tagged yet.
+        </i>
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

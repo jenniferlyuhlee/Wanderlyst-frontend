@@ -12,7 +12,7 @@ import "./UserProfile.css"
  */
 
 function UserProfile(){
-    const { currUser} = useContext(UserContext);
+    const { currUser, likes} = useContext(UserContext);
     const { username } = useParams();
 
     // state set to null to use loading spinner
@@ -33,14 +33,14 @@ function UserProfile(){
             }
         }
         getUser();
-    }, [username, currUser]);
+    }, [username, likes]);
 
     // toggle itineraries / likes
     function toggleDisplay(){
         setShowItins(state => !state)
     }
 
-    if(error) return <p className="NotFound">Sorry, this user could not be found.</p>
+    if(error) return <p className="NotFound"><i>Sorry, this user could not be found.</i></p>
 
     if(!user) return <Loading />
 
@@ -115,7 +115,7 @@ function UserProfile(){
                     :
                     <div className = "text-center">
                         <i>
-                            {currUser.username === user.username? " Start exploring and liking itineraries!" : `${user.username} has no likes yet.`}
+                            {currUser.username === user.username? "Start exploring and liking itineraries!" : `${user.username} has no likes yet.`}
                         </i>
                     </div>
                     }

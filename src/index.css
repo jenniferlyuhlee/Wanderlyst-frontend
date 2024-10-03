@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Manrope:wght@200..800&family=Unbounded:wght@200..900&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -19,22 +20,26 @@
   }
 }
 
-a {
+body{
+  font-family: "Manrope", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 500;
+}
+
+.wanderlyst{
+  font-family: "Unbounded", sans-serif;
+}
+
+i{
+  font-family: Inter, sans-serif;
+}
+
+a {
   color: black;
   text-decoration: inherit;
 }
 a:hover {
   color: rgb(56, 110, 85);
 }
-
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-} */
 
 .NotFound{
   margin: 6rem 0;
@@ -73,6 +78,10 @@ hr{
   background-color:#888;
 }
 
+.btn-primary, .btn-danger{
+  font-weight: 600;
+}
+
 .secondary{
   color:#888;
 }
@@ -95,11 +104,11 @@ hr{
 
 @media (max-width: 1000px){
   .auth-form{
-    margin-top: 4rem !important;
+    margin-top: 3.5rem !important;
   }
 }
 
-@media (max-width: 500px){
+@media (max-width: 700px){
   .auth-form{
     margin-top: 1rem !important;
     width: 30rem;

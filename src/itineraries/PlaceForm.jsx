@@ -1,5 +1,9 @@
 import React, {useState} from "react";
 
+/** PlaceForm component
+ * Displays sub-form for adding associated places to itinerary
+ * props (inherited from parent ItinForm): index, placeData, handlePlaceChange
+ */
 function PlaceForm({ index, placeData, handlePlaceChange }){
     return(
         <div className="place-form my-1 p-0">
@@ -7,7 +11,7 @@ function PlaceForm({ index, placeData, handlePlaceChange }){
                 Place {index + 1}:
             </h5>
             <div className="form-floating mb-2 p-0">
-                <input
+                <input id = {`name${index+1}`}
                     className="form-control"
                     name="name"
                     placeholder="Place Name"
@@ -15,10 +19,10 @@ function PlaceForm({ index, placeData, handlePlaceChange }){
                     onChange={(e) => handlePlaceChange(index, e)}
                     required
                 />
-                <label htmlFor="name">Place Name</label>
+                <label htmlFor={`name${index+1}`}>Place Name</label>
             </div>
             <div className="form-floating mb-2 p-0">
-                <input
+                <input id = {`address${index+1}`}
                     className="form-control"
                     name="address"
                     placeholder="Place Address"
@@ -26,10 +30,11 @@ function PlaceForm({ index, placeData, handlePlaceChange }){
                     onChange={(e) => handlePlaceChange(index, e)}
                     required
                 />
-                <label htmlFor="address">Address</label>
+                <label htmlFor={`address${index+1}`}>Address</label>
             </div>
             <div className="form-group mb-2 p-0">
                 <textarea
+                    id ={`description${index+1}`}
                     className="form-control"
                     name="description"
                     rows = "3"
@@ -40,14 +45,14 @@ function PlaceForm({ index, placeData, handlePlaceChange }){
                 />
             </div>
             <div className="form-floating mb-2 p-0">
-                <input
+                <input id = {`image${index+1}`}
                     className="form-control"
                     name="image"
                     placeholder="Image"
                     value={placeData.image}
                     onChange={(e) => handlePlaceChange(index, e)}
                 />
-                <label htmlFor="image">Image URL (optional)</label>
+                <label htmlFor={`image${index+1}`}>Image URL (optional)</label>
             </div>
         </div>
     );

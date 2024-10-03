@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TagCard component > matches snapshot 1`] = `
+<DocumentFragment>
+  <a
+    class="TagCard"
+    href="/tags/testTag"
+  >
+    <div
+      class="Tag-bg tag-bg-testTag"
+    >
+      <div
+        class="TagCard-overlay"
+      >
+        <h4>
+          testTag
+        </h4>
+      </div>
+    </div>
+  </a>
+</DocumentFragment>
+`;

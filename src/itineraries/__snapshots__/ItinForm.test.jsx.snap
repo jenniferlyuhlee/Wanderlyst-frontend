@@ -1,0 +1,229 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ItinForm component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container mb-5 body-cont"
+  >
+    <div
+      class="card px-5"
+    >
+      <h2
+        class="text-center"
+      >
+        My New Itinerary
+      </h2>
+      <form
+        class="row m-1"
+      >
+        <div
+          class="form-floating col-9 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            id="title"
+            name="title"
+            placeholder="firstName"
+            value=""
+          />
+          <label
+            for="title"
+          >
+            Title
+          </label>
+        </div>
+        <div
+          class="col-3 form-floating p-0"
+        >
+          <input
+            class="form-control"
+            id="duration"
+            min="1"
+            name="duration"
+            placeholder="duration"
+            type="number"
+            value=""
+          />
+          <label
+            for="duration"
+          >
+            Days
+          </label>
+        </div>
+        <div
+          class="form-floating col-6 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            id="city"
+            name="city"
+            placeholder="city"
+            value=""
+          />
+          <label
+            for="city"
+          >
+            City
+          </label>
+        </div>
+        <div
+          class="form-floating col-6 mb-2 p-0"
+        >
+          <input
+            class="form-control"
+            id="country"
+            name="country"
+            placeholder="country"
+            value=""
+          />
+          <label
+            for="country"
+          >
+            Country
+          </label>
+        </div>
+        <div
+          class="form-group col-12 mb-2 p-0"
+        >
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            placeholder="Share a description of the overall itinerary! This will display on the itinerary preview card."
+            rows="4"
+          />
+        </div>
+        <div
+          class="Form-tag-check row mt-2"
+        >
+          <h5
+            class="mb-1 p-0"
+          >
+            Tags:
+          </h5>
+          <div
+            class="form-check"
+          >
+            <input
+              class="form-check-input col"
+              id="Foodie"
+              type="checkbox"
+              value="1"
+            />
+            <label
+              class="form-check-label"
+              for="Foodie"
+            >
+              Foodie
+            </label>
+          </div>
+          <div
+            class="form-check"
+          >
+            <input
+              class="form-check-input col"
+              id="Explorer"
+              type="checkbox"
+              value="2"
+            />
+            <label
+              class="form-check-label"
+              for="Explorer"
+            >
+              Explorer
+            </label>
+          </div>
+        </div>
+        <div
+          class="place-form my-1 p-0"
+        >
+          <h5
+            class="mb-1 p-0"
+          >
+            Place 1:
+          </h5>
+          <div
+            class="form-floating mb-2 p-0"
+          >
+            <input
+              class="form-control"
+              id="name1"
+              name="name"
+              placeholder="Place Name"
+              required=""
+              value=""
+            />
+            <label
+              for="name1"
+            >
+              Place Name
+            </label>
+          </div>
+          <div
+            class="form-floating mb-2 p-0"
+          >
+            <input
+              class="form-control"
+              id="address1"
+              name="address"
+              placeholder="Place Address"
+              required=""
+              value=""
+            />
+            <label
+              for="address1"
+            >
+              Address
+            </label>
+          </div>
+          <div
+            class="form-group mb-2 p-0"
+          >
+            <textarea
+              class="form-control"
+              id="description1"
+              name="description"
+              placeholder="Share what you did or can do here! Plus any time expectations, highlights, tips, important precautions etc. "
+              required=""
+              rows="3"
+            />
+          </div>
+          <div
+            class="form-floating mb-2 p-0"
+          >
+            <input
+              class="form-control"
+              id="image1"
+              name="image"
+              placeholder="Image"
+              value=""
+            />
+            <label
+              for="image1"
+            >
+              Image URL (optional)
+            </label>
+          </div>
+        </div>
+        <div
+          class="p-0 text-center"
+        >
+          <button
+            class="btn p-0 mb-2 mx-2 secondary"
+            type="button"
+          >
+            <i
+              class="bi bi-plus-circle-fill"
+            />
+          </button>
+        </div>
+        <button
+          class="btn rounded-pill btn-lg btn-primary"
+        >
+          Share
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

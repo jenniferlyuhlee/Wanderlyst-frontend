@@ -1,0 +1,76 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TagsSelect sub-form component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="place-form my-1 p-0"
+  >
+    <h5
+      class="mb-1 p-0"
+    >
+      Place 2:
+    </h5>
+    <div
+      class="form-floating mb-2 p-0"
+    >
+      <input
+        class="form-control"
+        id="name2"
+        name="name"
+        placeholder="Place Name"
+        required=""
+        value=""
+      />
+      <label
+        for="name2"
+      >
+        Place Name
+      </label>
+    </div>
+    <div
+      class="form-floating mb-2 p-0"
+    >
+      <input
+        class="form-control"
+        id="address2"
+        name="address"
+        placeholder="Place Address"
+        required=""
+        value=""
+      />
+      <label
+        for="address2"
+      >
+        Address
+      </label>
+    </div>
+    <div
+      class="form-group mb-2 p-0"
+    >
+      <textarea
+        class="form-control"
+        name="description"
+        placeholder="Share what you did or can do here! Plus any time expectations, highlights, tips, important precautions etc. "
+        required=""
+        rows="3"
+      />
+    </div>
+    <div
+      class="form-floating mb-2 p-0"
+    >
+      <input
+        class="form-control"
+        id="image2"
+        name="image"
+        placeholder="Image"
+        value=""
+      />
+      <label
+        for="image2"
+      >
+        Image URL (optional)
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;

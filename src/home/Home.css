@@ -1,8 +1,8 @@
 .Home-title{
     padding: 2rem;
     margin: 2rem;
-    width: 50%;
-    background-color: rgba(0, 0, 0, 0.3);
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
 }
 
@@ -13,6 +13,15 @@
     .Home{
         flex-direction: column;
     }
+}
+
+.Home-header{
+    display: flex;
+    align-items: center;
+}
+
+.Home-gif{
+    width: 150px;
 }
 
 .btn{

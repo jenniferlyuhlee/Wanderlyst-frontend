@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import WanderlystApi from "../utils/api";
 import ItinCard from "../itineraries/ItinCard";
@@ -7,6 +7,7 @@ import "./TagDetails.css"
 
 /** Tag Details Page Component
  * Displays tag details and associated itineraries
+ * Params: name
  */
 
 function TagDetails(){
@@ -29,14 +30,14 @@ function TagDetails(){
         getTag();
     }, [name]);
 
-    if(error) return <p className="NotFound">Sorry this tag doesn't exist.</p>
+    if(error) return <p className="NotFound"><i>Sorry this tag doesn't exist.</i></p>
 
     if(!tag) return <Loading />
 
     return(
         <div className = "TagDetails">
             <div className = {`TagName-bg TagName-bg-${tag.name}`}>
-                <h1 className = "text-center display-4">
+                <h1 className = "text-center display-4 wanderlyst fw-medium TagName">
                     {tag.name}
                 </h1>
             </div>
@@ -50,7 +51,7 @@ function TagDetails(){
                 </div>
                 :
                 <p className="text-center fst-italic">
-                    Sorry, no itineraries have been tagged yet.
+                    <i>Sorry, no itineraries have been tagged yet.</i>
                 </p>
                 }
             </div>

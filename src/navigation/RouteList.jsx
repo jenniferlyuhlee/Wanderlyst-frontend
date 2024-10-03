@@ -13,7 +13,7 @@ import TagDetails from "../tags/TagDetails";
 import Home from "../home/Home";
 
 /** Wanderlyst Routes
- * 
+ * Contains protected routes
  */
 
 function RouteList({login, signup}){

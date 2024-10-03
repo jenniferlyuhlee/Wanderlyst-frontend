@@ -1,0 +1,48 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TagsSelect sub-form component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Form-tag-check row mt-2"
+  >
+    <h5
+      class="mb-1 p-0"
+    >
+      Tags:
+    </h5>
+    <div
+      class="form-check"
+    >
+      <input
+        checked=""
+        class="form-check-input col"
+        id="Foodie"
+        type="checkbox"
+        value="1"
+      />
+      <label
+        class="form-check-label"
+        for="Foodie"
+      >
+        Foodie
+      </label>
+    </div>
+    <div
+      class="form-check"
+    >
+      <input
+        class="form-check-input col"
+        id="Explorer"
+        type="checkbox"
+        value="2"
+      />
+      <label
+        class="form-check-label"
+        for="Explorer"
+      >
+        Explorer
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;

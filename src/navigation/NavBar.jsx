@@ -3,14 +3,18 @@ import { Link, NavLink } from "react-router-dom";
 import UserContext from "../auth-user/UserContext";
 import "./NavBar.css"
 
+/** NavBar component
+ * Displays content based on currUser
+ * currUser ? profile/itineraries/tags : signup/login display
+ */
 function NavBar(){
     const { currUser, logout} = useContext(UserContext);
 
     return(
         <nav className = "NavBar">
             <div className = "NavBar-left">
-                <NavLink className = "NavBar-link-left" to = "/">
-                    Wanderlyst
+                <NavLink className = "NavBar-link-left wanderlyst" to = "/">
+                    WanderLyst
                 </NavLink>
                 {currUser ? 
                 <> 
@@ -52,20 +56,7 @@ function NavBar(){
                             </Link>  
                             </li>
                         </ul>
-                    </div>
-             
-                 
-                    {/* <NavLink className = "NavBar-link-right" to={`users/profile/${currUser.username}`} >
-                        <img className = "NavBar-profilePic"
-                            src = {currUser.profilePic ? `${currUser.profilePic}`
-                            : "/src/assets/default_profile.jpg"}
-                        />
-                    </NavLink>
-                    <Link className="NavBar-link-right" 
-                        to="/" 
-                        onClick={logout}>Logout
-                    </Link>   */}
-                    
+                    </div>  
                 </>
                 :
                 <>
