@@ -39,7 +39,7 @@ function NavBar(){
                         <img className = "NavBar-profilePic dropdown-toggle"
                             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
                             src = {currUser.profilePic ? `${currUser.profilePic}`
-                            : "/src/assets/default_profile.jpg"}
+                            : "/default_profile.jpg"}
                         />
                         <ul className="dropdown-menu text-center p-2">
                             <li>

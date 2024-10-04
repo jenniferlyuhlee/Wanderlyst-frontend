@@ -49,9 +49,10 @@ function UserProfile(){
             <h1 className = "Profile-title">@{user.username}</h1>
             <div className = "Profile-header">
                 <div className = "Profile-header-group">
-                    <img className = "Profile-img" src = 
+                    <img className = "Profile-img" alt="Profile-img"
+                    src = 
                     {user.profilePic ? `${user.profilePic}`
-                        : "/src/assets/default_profile.jpg"
+                        : "/default_profile.jpg"
                     }
                     />
                     <div className = "Profile-info">
