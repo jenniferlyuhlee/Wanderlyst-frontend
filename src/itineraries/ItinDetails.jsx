@@ -57,7 +57,8 @@ function ItinDetails(){
         setItinerary(itinerary => ({
             ...itinerary,
             likes: likeStatus? +itinerary.likes+1 : +itinerary.likes-1
-        }));
+            })
+        );
     }
 
     if(error) return <p className="NotFound"><i>Sorry this itinerary doesn't exist.</i></p>
