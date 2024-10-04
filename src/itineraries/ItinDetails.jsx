@@ -64,7 +64,6 @@ function ItinDetails(){
     if(error) return <p className="NotFound"><i>Sorry this itinerary doesn't exist.</i></p>
     if(!itinerary) return <Loading />
 
-    console.log(itinerary.tags)
     return(
         <div className = "Itin-details card body-cont">
                 {errorMsg?
