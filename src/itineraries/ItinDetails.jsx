@@ -125,9 +125,9 @@ function ItinDetails(){
             <p className="mt-2 mb-3">{itinerary.description}</p>
  
             <div className = "Itin-map mb-4">
-                {/* <APIProvider apiKey={import.meta.env.VITE_GOOGLE_API_KEY}>
+                <APIProvider apiKey={import.meta.env.VITE_GOOGLE_API_KEY}>
                     <GoogleMap itinerary={itinerary}/>
-                </APIProvider> */}
+                </APIProvider>
             </div>
 
             <div className="Itin-Places">
