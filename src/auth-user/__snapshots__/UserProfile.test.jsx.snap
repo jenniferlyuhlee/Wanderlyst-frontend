@@ -17,8 +17,9 @@ exports[`UserProfile Component > matches snapshot 1`] = `
         class="Profile-header-group"
       >
         <img
+          alt="Profile-img"
           class="Profile-img"
-          src="/src/assets/default_profile.jpg"
+          src="/default_profile.jpg"
         />
         <div
           class="Profile-info"

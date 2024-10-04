@@ -82,7 +82,7 @@ exports[`NavBar component: currUser > matches snapshot 1`] = `
           data-bs-toggle="dropdown"
           href="#"
           role="button"
-          src="/src/assets/default_profile.jpg"
+          src="/default_profile.jpg"
         />
         <ul
           class="dropdown-menu text-center p-2"
