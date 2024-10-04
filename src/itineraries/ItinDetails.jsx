@@ -23,7 +23,6 @@ function ItinDetails(){
     // status to set liked status - convert id param to integer
     const [liked, setLiked] = useState(hasLikedItin(+id));
 
-
     // fetches itinerary details from API upon initial load
     useEffect(function getItinDetails() {
         async function getItin(){
@@ -36,7 +35,7 @@ function ItinDetails(){
             }
         }
         getItin();
-    }, [id, likes]);
+    }, [id]);
 
     // function to delete itinerary
     async function deleteItin(){
@@ -51,13 +50,20 @@ function ItinDetails(){
 
     // function to handle likes
     async function handleLike(){
-        toggleLike(+id);
-        setLiked(likeState => !likeState);
+        const likeStatus = await toggleLike(+id);
+        setLiked(!liked);
+
+        //update likes count without re-fetching itinerary
+        setItinerary(itinerary => ({
+            ...itinerary,
+            likes: likeStatus? +itinerary.likes+1 : +itinerary.likes-1
+        }));
     }
 
     if(error) return <p className="NotFound"><i>Sorry this itinerary doesn't exist.</i></p>
     if(!itinerary) return <Loading />
 
+    console.log(itinerary.tags)
     return(
         <div className = "Itin-details card body-cont">
                 {errorMsg?
@@ -119,9 +125,9 @@ function ItinDetails(){
             <p className="mt-2 mb-3">{itinerary.description}</p>
  
             <div className = "Itin-map mb-4">
-                <APIProvider apiKey={import.meta.env.VITE_GOOGLE_API_KEY}>
+                {/* <APIProvider apiKey={import.meta.env.VITE_GOOGLE_API_KEY}>
                     <GoogleMap itinerary={itinerary}/>
-                </APIProvider>
+                </APIProvider> */}
             </div>
 
             <div className="Itin-Places">
