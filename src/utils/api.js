@@ -12,7 +12,7 @@ class WanderlystApi {
 
     // method to pass auth token and make different requests
     static async request(endpoint, data={}, method="get"){
-        // console.debug("API Call:", endpoint, method);
+        console.debug("API Call:", endpoint, method);
 
         const url = `${BASE_URL}/${endpoint}`;
         const headers = { Authorization: `Bearer ${WanderlystApi.token }`};
